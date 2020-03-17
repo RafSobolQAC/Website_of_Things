@@ -1,12 +1,12 @@
-GET         /                            controllers.HomeController.index
+GET         /                      controllers.HomeController.index
 
-GET         /login                       controllers.LoginController.login
-POST        /login                       controllers.LoginController.loginSubmit
+#GET         /login                       controllers.LoginController.login
+#POST        /login                       controllers.LoginController.loginSubmit
 
-GET         /createperson                controllers.ApplicationUsingJsonReadersWriters.create
+#GET         /createperson                controllers.ApplicationUsingJsonReadersWriters.create
+GET         /creatething           controllers.ThingController.showThingForm
+POST        /createFromJson        controllers.ThingController.createFromJson
+POST        /submitForm            controllers.ThingController.submitForm
+#GET         /findByName/:lastName        controllers.ApplicationUsingJsonReadersWriters.findByName(lastName: String)
 
-POST        /createFromJson              controllers.ApplicationUsingJsonReadersWriters.createFromJson
-
-GET         /findByName/:lastName        controllers.ApplicationUsingJsonReadersWriters.findByName(lastName: String)
-
-GET         /assets/*file                controllers.Assets.at(path="/public", file)
+GET         /assets/*file          controllers.Assets.at(path="/public", file)

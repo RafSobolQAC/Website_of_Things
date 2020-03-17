@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ScalaCompilerConfiguration">
     <profile name="sbt 1" modules="recipies_new_5803" />
-    <profile name="sbt 2" modules="Recipies_New_Play_Version">
+    <profile name="sbt 2" modules="Recipies_New_Play_Version,Website_of_Things">
       <option name="deprecationWarnings" value="true" />
       <option name="uncheckedWarnings" value="true" />
       <parameters>
