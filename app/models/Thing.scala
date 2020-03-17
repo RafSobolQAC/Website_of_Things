@@ -14,9 +14,9 @@ case class Tag(
               )
 
 
-object JsonFormats {
-  import play.api.libs.json.Json
-
-  implicit val feedFormat: OFormat[Tag] = Json.format[Tag]
-  implicit val userFormat: OFormat[Thing] = Json.format[Thing]
-}
+//object JsonFormats {
+//  import play.api.libs.json.Json
+//
+//  implicit val feedFormat: OFormat[Tag] = Json.format[Tag]
+//  implicit val userFormat: OFormat[Thing] = Json.format[Thing]
+//}
