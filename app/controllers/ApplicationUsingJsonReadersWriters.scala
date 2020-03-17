@@ -39,10 +39,10 @@
 //  }
 //
 //  def findByName(lastName: String): Action[AnyContent] = Action.async {
-//    val cursor: Future[Cursor[User]] = collection.map {
+//    val cursor: Future[Cursor[String]] = collection.map {
 //      _.find(Json.obj("lastName" -> lastName)).
 //        sort(Json.obj("created" -> -1)).
-//        cursor[User]()
+//        cursor[String]()
 //    }
 //
 //    val futureUsersList: Future[List[User]] =

@@ -1,0 +1,10 @@
+@import scala.collection.mutable.ListBuffer
+@(thingList: ListBuffer[Thing])
+
+<div>
+    <ul>
+        @for(i <- thingList.indices) {
+            <li>@thingList(i).toString</li>
+        }
+    </ul>
+</div>

@@ -1,14 +1,63 @@
-2020-03-17 14:46:02,683 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-12 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-03-17 16:20:52,605 [WARN] from reactivemongo.api.MongoConnection in scala-execution-context-global-76 - Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-03-17 16:20:53,616 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-9 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-03-17 14:46:02,687 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-12 - Application started (Dev) (no global state)
-2020-03-17 14:51:28,948 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-15 - 
+2020-03-17 16:20:53,621 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-9 - Application started (Dev) (no global state)
+2020-03-17 16:21:07,373 [WARN] from reactivemongo.api.MongoConnection in reactivemongo-akka.actor.default-dispatcher-8 - [Supervisor-1/Connection-1] Timeout after 8200 milliseconds while probing the connection monitor: IsPrimaryAvailable#1050698987?
+2020-03-17 16:21:07,396 [ERROR] from play.api.http.DefaultHttpErrorHandler in application-akka.actor.default-dispatcher-8 - 
 
-! @7f728edfe - Internal server error, for (GET) [/login] ->
+! @7f72k8dng - Internal server error, for (POST) [/submitForm] ->
  
-play.sbt.PlayExceptions$CompilationException: Compilation error[object Recipe is not a member of package models]
+play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[PrimaryUnavailableException: MongoError['No primary node is available! (Supervisor-1/Connection-1)']]]
+	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:335)
+	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:253)
+	at play.core.server.AkkaHttpServer$$anonfun$2.applyOrElse(AkkaHttpServer.scala:424)
+	at play.core.server.AkkaHttpServer$$anonfun$2.applyOrElse(AkkaHttpServer.scala:420)
+	at scala.concurrent.Future.$anonfun$recoverWith$1(Future.scala:412)
+	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:37)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:92)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:12)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:81)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:92)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:47)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:47)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
+Caused by: reactivemongo.core.actors.Exceptions$PrimaryUnavailableException: MongoError['No primary node is available! (Supervisor-1/Connection-1)']
+	at play.modules.reactivemongo.DefaultReactiveMongoApi.database(DefaultReactiveMongoApi.scala:71)
+	at reactivemongo.api.MongoConnection.database(MongoConnection.scala:108)
+Caused by: reactivemongo.core.actors.Exceptions$InternalState: 
+	at reactivemongo.ChannelDisconnected(d9f35031, {{NodeSet None Node[cluster0-shard-00-00-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=9223372036854775807ns, authenticated={}] | Node[cluster0-shard-00-02-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=9223372036854775807ns, authenticated={}] | Node[cluster0-shard-00-01-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=28221520015936ns, authenticated={}] }})(<time:28221627192650>)
+	at reactivemongo.ChannelDisconnected(aa72c0a9, {{NodeSet None Node[cluster0-shard-00-00-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=28221580315691ns, authenticated={}] | Node[cluster0-shard-00-02-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=9223372036854775807ns, authenticated={}] | Node[cluster0-shard-00-01-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=28221520015936ns, authenticated={}] }})(<time:28221626757285>)
+	at reactivemongo.ChannelDisconnected(73770318, {{NodeSet None Node[cluster0-shard-00-00-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=28221580315691ns, authenticated={}] | Node[cluster0-shard-00-02-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=28221578554746ns, authenticated={}] | Node[cluster0-shard-00-01-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=28221520015936ns, authenticated={}] }})(<time:28221625994404>)
+	at reactivemongo.ChannelConnected(86e10fcb, {{NodeSet None Node[cluster0-shard-00-00-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=28221580315691ns, authenticated={}] | Node[cluster0-shard-00-02-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=28221578554746ns, authenticated={}] | Node[cluster0-shard-00-01-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=28221520015936ns, authenticated={}] }})(<time:28221581521061>)
+	at reactivemongo.ChannelConnected(aa72c0a9, {{NodeSet None Node[cluster0-shard-00-00-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] | Node[cluster0-shard-00-02-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=28221578554746ns, authenticated={}] | Node[cluster0-shard-00-01-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=28221520015936ns, authenticated={}] }})(<time:28221581148559>)
+	at reactivemongo.ChannelConnected(e3da1e0a, {{NodeSet None Node[cluster0-shard-00-00-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] | Node[cluster0-shard-00-02-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=28221578554746ns, authenticated={}] | Node[cluster0-shard-00-01-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=28221520015936ns, authenticated={}] }})(<time:28221580123416>)
+	at reactivemongo.ChannelConnected(73770318, {{NodeSet None Node[cluster0-shard-00-00-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] | Node[cluster0-shard-00-02-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] | Node[cluster0-shard-00-01-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=28221520015936ns, authenticated={}] }})(<time:28221579787053>)
+	at reactivemongo.ChannelConnected(e2da4901, {{NodeSet None Node[cluster0-shard-00-00-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] | Node[cluster0-shard-00-02-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] | Node[cluster0-shard-00-01-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=28221520015936ns, authenticated={}] }})(<time:28221578258576>)
+	at reactivemongo.ChannelConnected(d9f35031, {{NodeSet None Node[cluster0-shard-00-00-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] | Node[cluster0-shard-00-02-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] | Node[cluster0-shard-00-01-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:28221575987795>)
+	at reactivemongo.Start({{NodeSet None Node[cluster0-shard-00-00-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] | Node[cluster0-shard-00-02-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] | Node[cluster0-shard-00-01-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:28221454818245>)
+2020-03-17 16:21:57,585 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.internal-dispatcher-3 - ReactiveMongoApi stopping...
+2020-03-17 16:21:57,604 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.default-dispatcher-8 - ReactiveMongoApi connections are stopped
+2020-03-17 16:21:57,716 [WARN] from reactivemongo.api.MongoConnection in scala-execution-context-global-76 - Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-03-17 16:21:57,952 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-13 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2020-03-17 16:21:57,954 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-13 - Application started (Dev) (no global state)
+2020-03-17 17:20:51,218 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-8 - 
+
+! @7f7324ba1 - Internal server error, for (POST) [/submitForm] ->
+ 
+play.sbt.PlayExceptions$CompilationException: Compilation error[object Feed is not a member of package models]
 	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
 	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
 	at scala.Option.map(Option.scala:145)
@@ -52,227 +101,12 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[object Recipe is
 	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
 	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
 	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
-2020-03-17 14:51:50,149 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-15 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-03-17 17:21:01,193 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.internal-dispatcher-4 - ReactiveMongoApi stopping...
+2020-03-17 17:21:01,215 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.default-dispatcher-6 - ReactiveMongoApi connections are stopped
+2020-03-17 17:21:01,366 [WARN] from reactivemongo.api.MongoConnection in scala-execution-context-global-71 - Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-03-17 17:21:01,641 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-17 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-03-17 14:51:50,151 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-15 - Application started (Dev) (no global state)
-2020-03-17 14:56:32,193 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-27 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2020-03-17 14:56:32,194 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-27 - Application started (Dev) (no global state)
-2020-03-17 14:57:37,569 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-33 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2020-03-17 14:57:37,570 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-33 - Application started (Dev) (no global state)
-2020-03-17 14:58:24,301 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-32 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2020-03-17 14:58:24,303 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-32 - Application started (Dev) (no global state)
-2020-03-17 14:58:49,298 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-32 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2020-03-17 14:58:49,302 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-32 - Application started (Dev) (no global state)
-2020-03-17 14:59:05,087 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-27 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2020-03-17 14:59:05,088 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-27 - Application started (Dev) (no global state)
-2020-03-17 15:00:44,983 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-32 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2020-03-17 15:00:44,984 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-32 - Application started (Dev) (no global state)
-2020-03-17 15:01:08,950 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-29 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2020-03-17 15:01:08,953 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-29 - Application started (Dev) (no global state)
-2020-03-17 15:03:00,362 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-33 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2020-03-17 15:03:00,363 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-33 - Application started (Dev) (no global state)
-2020-03-17 15:03:28,954 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-29 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2020-03-17 15:03:28,957 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-29 - Application started (Dev) (no global state)
-2020-03-17 15:03:42,369 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-32 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2020-03-17 15:03:42,370 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-32 - Application started (Dev) (no global state)
-2020-03-17 15:05:07,026 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-29 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2020-03-17 15:05:07,027 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-29 - Application started (Dev) (no global state)
-2020-03-17 15:06:21,065 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-33 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2020-03-17 15:06:21,066 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-33 - Application started (Dev) (no global state)
-2020-03-17 15:38:12,181 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-42 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2020-03-17 15:38:12,182 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-42 - Application started (Dev) (no global state)
-2020-03-17 15:38:31,331 [WARN] from reactivemongo.api.MongoConnection in reactivemongo-akka.actor.default-dispatcher-6 - [Supervisor-1/Connection-1] Timeout after 8200 milliseconds while probing the connection monitor: IsPrimaryAvailable#1335094977?
-2020-03-17 15:38:31,348 [ERROR] from play.api.http.DefaultHttpErrorHandler in application-akka.actor.default-dispatcher-10 - 
-
-! @7f72ej2kc - Internal server error, for (POST) [/submitForm] ->
- 
-play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[PrimaryUnavailableException: MongoError['No primary node is available! (Supervisor-1/Connection-1)']]]
-	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:335)
-	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:253)
-	at play.core.server.AkkaHttpServer$$anonfun$2.applyOrElse(AkkaHttpServer.scala:424)
-	at play.core.server.AkkaHttpServer$$anonfun$2.applyOrElse(AkkaHttpServer.scala:420)
-	at scala.concurrent.Future.$anonfun$recoverWith$1(Future.scala:412)
-	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:37)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
-	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:92)
-	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:12)
-	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:81)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:92)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:47)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:47)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
-	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
-	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
-	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
-	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
-Caused by: reactivemongo.core.actors.Exceptions$PrimaryUnavailableException: MongoError['No primary node is available! (Supervisor-1/Connection-1)']
-	at play.modules.reactivemongo.DefaultReactiveMongoApi.database(DefaultReactiveMongoApi.scala:71)
-	at reactivemongo.api.MongoConnection.database(MongoConnection.scala:108)
-Caused by: reactivemongo.core.actors.Exceptions$InternalState: 
-	at reactivemongo.ChannelDisconnected(aea86928, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:25665415618355>)
-	at reactivemongo.ChannelDisconnected(6e6a69d7, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:25665415141580>)
-	at reactivemongo.Start({{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:25665376897743>)
-2020-03-17 15:45:24,768 [WARN] from reactivemongo.api.MongoConnection in reactivemongo-akka.actor.default-dispatcher-11 - [Supervisor-1/Connection-1] Timeout after 8200 milliseconds while probing the connection monitor: IsPrimaryAvailable#566856666?
-2020-03-17 15:45:24,771 [ERROR] from play.api.http.DefaultHttpErrorHandler in application-akka.actor.default-dispatcher-9 - 
-
-! @7f72fgg99 - Internal server error, for (POST) [/submitForm] ->
- 
-play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[PrimaryUnavailableException: MongoError['No primary node is available! (Supervisor-1/Connection-1)']]]
-	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:335)
-	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:253)
-	at play.core.server.AkkaHttpServer$$anonfun$2.applyOrElse(AkkaHttpServer.scala:424)
-	at play.core.server.AkkaHttpServer$$anonfun$2.applyOrElse(AkkaHttpServer.scala:420)
-	at scala.concurrent.Future.$anonfun$recoverWith$1(Future.scala:412)
-	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:37)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
-	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:92)
-	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:12)
-	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:81)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:92)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:47)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:47)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
-	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
-	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
-	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
-	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
-Caused by: reactivemongo.core.actors.Exceptions$PrimaryUnavailableException: MongoError['No primary node is available! (Supervisor-1/Connection-1)']
-	at play.modules.reactivemongo.DefaultReactiveMongoApi.database(DefaultReactiveMongoApi.scala:71)
-	at reactivemongo.api.MongoConnection.database(MongoConnection.scala:108)
-Caused by: reactivemongo.core.actors.Exceptions$InternalState: 
-	at reactivemongo.ChannelDisconnected(23b7bd6a, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26086450231553>)
-	at reactivemongo.ChannelDisconnected(c485e118, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26086450030902>)
-	at reactivemongo.ChannelDisconnected(95453303, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26086449809020>)
-	at reactivemongo.ChannelDisconnected(2bbccbbb, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26086449561556>)
-	at reactivemongo.ChannelDisconnected(a5593004, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26086449292661>)
-	at reactivemongo.ChannelDisconnected(676885d8, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26086449124523>)
-	at reactivemongo.ChannelDisconnected(77876b96, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26086448898628>)
-	at reactivemongo.ChannelDisconnected(ac5a5334, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26086448705517>)
-	at reactivemongo.ChannelDisconnected(7a16a610, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26086448508404>)
-	at reactivemongo.ChannelDisconnected(ebc609de, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26086448281522>)
-	at reactivemongo.ChannelDisconnected(2a1d0885, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26086447958846>)
-	at reactivemongo.ChannelReconnecting(6f80e619, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26086425667221>)
-	at reactivemongo.ChannelReconnecting(6eba0c12, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26086425298450>)
-	at reactivemongo.ChannelReconnecting(e3372b87, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26086424961583>)
-	at reactivemongo.ChannelReconnecting(05789fb9, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26086424699267>)
-	at reactivemongo.ChannelReconnecting(c8843736, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26086424287668>)
-	at reactivemongo.ChannelReconnecting(2df2a0fe, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26086423900463>)
-	at reactivemongo.ChannelReconnecting(c712b900, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26086423478554>)
-	at reactivemongo.ChannelReconnecting(aaad159a, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26086423169790>)
-	at reactivemongo.ChannelReconnecting(069ec54c, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26086422762102>)
-	at reactivemongo.ChannelReconnecting(4a1d53c8, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26086421854925>)
-	at reactivemongo.ChannelReconnecting(17f2de29, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26086421425906>)
-	at reactivemongo.ConnectAll({{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26085391086880>)
-	at reactivemongo.RefreshAll({{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26085390689229>)
-	at reactivemongo.ChannelDisconnected(6eba0c12, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26076407088460>)
-2020-03-17 15:47:09,059 [WARN] from reactivemongo.api.MongoConnection in reactivemongo-akka.actor.default-dispatcher-7 - [Supervisor-1/Connection-1] Timeout after 8200 milliseconds while probing the connection monitor: IsPrimaryAvailable#694266946?
-2020-03-17 15:47:09,062 [ERROR] from play.api.http.DefaultHttpErrorHandler in application-akka.actor.default-dispatcher-7 - 
-
-! @7f72fmege - Internal server error, for (POST) [/submitForm] ->
- 
-play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[PrimaryUnavailableException: MongoError['No primary node is available! (Supervisor-1/Connection-1)']]]
-	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:335)
-	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:253)
-	at play.core.server.AkkaHttpServer$$anonfun$2.applyOrElse(AkkaHttpServer.scala:424)
-	at play.core.server.AkkaHttpServer$$anonfun$2.applyOrElse(AkkaHttpServer.scala:420)
-	at scala.concurrent.Future.$anonfun$recoverWith$1(Future.scala:412)
-	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:37)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
-	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:92)
-	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:12)
-	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:81)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:92)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:47)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:47)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
-	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
-	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
-	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
-	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
-Caused by: reactivemongo.core.actors.Exceptions$PrimaryUnavailableException: MongoError['No primary node is available! (Supervisor-1/Connection-1)']
-	at play.modules.reactivemongo.DefaultReactiveMongoApi.database(DefaultReactiveMongoApi.scala:71)
-	at reactivemongo.api.MongoConnection.database(MongoConnection.scala:108)
-Caused by: reactivemongo.core.actors.Exceptions$InternalState: 
-	at reactivemongo.ChannelDisconnected(88151f5c, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26186675095093>)
-	at reactivemongo.ChannelDisconnected(722a8ed2, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26186674942703>)
-	at reactivemongo.ChannelDisconnected(3015e115, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26186674802655>)
-	at reactivemongo.ChannelDisconnected(23bc8a7f, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26186674650272>)
-	at reactivemongo.ChannelDisconnected(c6fbd89a, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26186674504498>)
-	at reactivemongo.ChannelDisconnected(4404e438, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26186674330065>)
-	at reactivemongo.ChannelDisconnected(ba787f3e, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26186674169975>)
-	at reactivemongo.ChannelDisconnected(bc1097d9, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26186673951696>)
-	at reactivemongo.ChannelReconnecting(32059da3, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26186673692666>)
-	at reactivemongo.ChannelReconnecting(039a3e50, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26186673427719>)
-	at reactivemongo.ChannelReconnecting(54e5cabd, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26186673054812>)
-	at reactivemongo.ChannelReconnecting(cf20daec, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26186672669831>)
-	at reactivemongo.ChannelReconnecting(05e6769d, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26186672307888>)
-	at reactivemongo.ChannelReconnecting(f42511fb, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26186671942649>)
-	at reactivemongo.ChannelReconnecting(8ecbe088, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26186671559135>)
-	at reactivemongo.ChannelReconnecting(81d03384, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26186671187840>)
-	at reactivemongo.ChannelDisconnected(f32f0960, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26186663057383>)
-	at reactivemongo.ChannelDisconnected(a33a7d85, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26186662907191>)
-	at reactivemongo.ChannelDisconnected(ae85ef95, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26186662725025>)
-	at reactivemongo.ChannelReconnecting(fa4157aa, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26186661828643>)
-	at reactivemongo.ChannelReconnecting(75c374d6, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26186661034941>)
-	at reactivemongo.ChannelReconnecting(15340fac, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26186660629516>)
-	at reactivemongo.RefreshAll({{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26185390713646>)
-	at reactivemongo.ConnectAll({{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26185390596106>)
-	at reactivemongo.ChannelDisconnected(f42511fb, {{NodeSet None Node[cluster0-6qesr.mongodb.net:27017: Unknown (0/0/10 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:26176654529283>)
+2020-03-17 17:21:01,642 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-17 - Application started (Dev) (no global state)
