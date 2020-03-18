@@ -1,13 +1,13 @@
 package controllers
 
 import reactivemongo.play.json._
-
 import javax.inject.{Inject, _}
 import models.{Tag, Thing}
 import play.api.mvc._
 import play.modules.reactivemongo.{MongoController, ReactiveMongoApi, ReactiveMongoComponents}
 import reactivemongo.play.json._
 import models.JsonFormats._
+import net.sf.ehcache.search.expression.NotNull
 import play.api.libs.json.{JsValue, Json}
 import reactivemongo.api.Cursor
 import reactivemongo.play.json.collection.{JSONCollection, _}
@@ -48,10 +48,10 @@ class ThingController @Inject()(
       collection.flatMap(_.insert.one(thing)).map(_ => Ok(views.html.things(Thing.createThingForm)))
     })
   }
-
-  def getThings = Action.async { implicit request: Request[AnyContent] =>
+000
+  def getThings(filter: Option[(String, Json.JsValueWrapper)] = None): Action[AnyContent] = Action.async { implicit request: Request[AnyContent] =>
     val cursor: Future[Cursor[Thing]] = collection.map {
-      _.find(Json.obj())
+      _.find(getOrNothing(filter))
         .cursor[Thing]()
     }
     cursor.flatMap(
@@ -60,8 +60,14 @@ class ThingController @Inject()(
         Cursor.FailOnError[List[Thing]]()
       )
     ).map {things =>
-      Ok(things.toString)
+      Ok(views.html.footer(things))
     }
+  }
+  def getOrNothing(filter: Option[(String, Json.JsValueWrapper)]) = {
+    if (filter.isDefined) Json.obj(filter.get) else Json.obj()
+  }
+  def getThingsWithFilter(filtered: String, value: String): Action[AnyContent] = {
+    getThings(Some((filtered, Json.toJsFieldJsValueWrapper(value))))
   }
 
 
