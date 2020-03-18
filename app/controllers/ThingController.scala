@@ -25,9 +25,30 @@ class ThingController @Inject()(
 
   def collection: Future[JSONCollection] = database.map(_.collection[JSONCollection]("things"))
 
+  implicit var thingsList: List[Thing] = List()
+
+  def makeThings = {
+    println("Done!")
+    val cursor: Future[Cursor[Thing]] = collection.map {
+      _.find(Json.obj())
+        .cursor[Thing]()
+    }
+
+    cursor.flatMap(
+      _.collect[List](
+        -1,
+        Cursor.FailOnError[List[Thing]]()
+      )
+    ).map { things =>
+      println(things)
+      thingsList = things
+      println(thingsList)
+    }
+  }
+
   def create(thing: Thing) = Action.async { implicit request: Request[AnyContent] =>
     val futureResult = collection.flatMap(_.insert.one(thing))
-    futureResult.map(_ => Ok(views.html.things(Thing.createThingForm)))
+    futureResult.map(_ => Ok(views.html.things(Thing.createThingForm, thingsList)))
   }
 
   def createFromJson: Action[JsValue] = Action.async(parse.json) { request =>
@@ -38,17 +59,18 @@ class ThingController @Inject()(
   }
 
   def showThingForm = Action { implicit request: Request[AnyContent] =>
-    Ok(views.html.things(Thing.createThingForm))
+    makeThings
+    Ok(views.html.things(Thing.createThingForm, thingsList))
   }
 
   def submitForm = Action.async { implicit request: Request[AnyContent] =>
     Thing.createThingForm.bindFromRequest.fold({ formWithErrors =>
-      Future.successful(BadRequest(views.html.things(formWithErrors)))
+      Future.successful(BadRequest(views.html.things(formWithErrors, thingsList)))
     }, { thing =>
-      collection.flatMap(_.insert.one(thing)).map(_ => Ok(views.html.things(Thing.createThingForm)))
+      collection.flatMap(_.insert.one(thing)).map(_ => Ok(views.html.things(Thing.createThingForm, thingsList)))
     })
   }
-000
+
   def getThings(filter: Option[(String, Json.JsValueWrapper)] = None): Action[AnyContent] = Action.async { implicit request: Request[AnyContent] =>
     val cursor: Future[Cursor[Thing]] = collection.map {
       _.find(getOrNothing(filter))
@@ -59,13 +81,16 @@ class ThingController @Inject()(
         -1,
         Cursor.FailOnError[List[Thing]]()
       )
-    ).map {things =>
-      Ok(views.html.footer(things))
+    ).map { things =>
+      thingsList = things
+      Ok(views.html.things(Thing.createThingForm, thingsList))
     }
   }
+
   def getOrNothing(filter: Option[(String, Json.JsValueWrapper)]) = {
     if (filter.isDefined) Json.obj(filter.get) else Json.obj()
   }
+
   def getThingsWithFilter(filtered: String, value: String): Action[AnyContent] = {
     getThings(Some((filtered, Json.toJsFieldJsValueWrapper(value))))
   }

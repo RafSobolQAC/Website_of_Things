@@ -1,4 +1,4 @@
-@(title: String)(content: Html)
+@(title: String)(things: List[Thing] = List())(content: Html)
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +11,6 @@
     <body>
         @header.apply()
         @content
-        @footer.apply()
+        @footer.apply(things)
     </body>
 </html>

@@ -1,14 +1,71 @@
-2020-03-17 16:20:52,605 [WARN] from reactivemongo.api.MongoConnection in scala-execution-context-global-76 - Connection option 'authSource' deprecated: use option 'authenticationDatabase'
-2020-03-17 16:20:53,616 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-9 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-03-18 09:20:34,320 [WARN] from reactivemongo.api.MongoConnection in scala-execution-context-global-77 - Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-03-18 09:20:36,328 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-6 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-03-17 16:20:53,621 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-9 - Application started (Dev) (no global state)
-2020-03-17 16:21:07,373 [WARN] from reactivemongo.api.MongoConnection in reactivemongo-akka.actor.default-dispatcher-8 - [Supervisor-1/Connection-1] Timeout after 8200 milliseconds while probing the connection monitor: IsPrimaryAvailable#1050698987?
-2020-03-17 16:21:07,396 [ERROR] from play.api.http.DefaultHttpErrorHandler in application-akka.actor.default-dispatcher-8 - 
+2020-03-18 09:20:36,337 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-6 - Application started (Dev) (no global state)
+2020-03-18 09:20:51,057 [WARN] from reactivemongo.core.actors.MongoDBSystem in reactivemongo-akka.actor.default-dispatcher-7 - [Supervisor-1/Connection-1] Fails to process SCRAM-SHA-1 nonce for 1000
+reactivemongo.core.commands.FailedAuthentication$$anon$1: BSONCommandError['null']
+	at reactivemongo.core.commands.FailedAuthentication$.apply(authentication.scala:199)
+	at reactivemongo.core.actors.MongoScramAuthentication$$anonfun$authReceive$1.applyOrElse(MongoScramAuthentication.scala:150)
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:172)
+	at akka.actor.Actor.aroundReceive(Actor.scala:534)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
+	at reactivemongo.core.actors.StandardDBSystem.aroundReceive(MongoDBSystem.scala:1789)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
+2020-03-18 09:20:51,061 [WARN] from reactivemongo.core.actors.MongoDBSystem in reactivemongo-akka.actor.default-dispatcher-7 - [Supervisor-1/Connection-1] Fails to process SCRAM-SHA-1 nonce for 1002
+reactivemongo.core.commands.FailedAuthentication$$anon$1: BSONCommandError['null']
+	at reactivemongo.core.commands.FailedAuthentication$.apply(authentication.scala:199)
+	at reactivemongo.core.actors.MongoScramAuthentication$$anonfun$authReceive$1.applyOrElse(MongoScramAuthentication.scala:150)
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:172)
+	at akka.actor.Actor.aroundReceive(Actor.scala:534)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
+	at reactivemongo.core.actors.StandardDBSystem.aroundReceive(MongoDBSystem.scala:1789)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
+2020-03-18 09:20:51,062 [WARN] from reactivemongo.core.actors.MongoDBSystem in reactivemongo-akka.actor.default-dispatcher-7 - [Supervisor-1/Connection-1] Fails to process SCRAM-SHA-1 nonce for 1001
+reactivemongo.core.commands.FailedAuthentication$$anon$1: BSONCommandError['null']
+	at reactivemongo.core.commands.FailedAuthentication$.apply(authentication.scala:199)
+	at reactivemongo.core.actors.MongoScramAuthentication$$anonfun$authReceive$1.applyOrElse(MongoScramAuthentication.scala:150)
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:172)
+	at akka.actor.Actor.aroundReceive(Actor.scala:534)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
+	at reactivemongo.core.actors.StandardDBSystem.aroundReceive(MongoDBSystem.scala:1789)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
+2020-03-18 09:20:58,160 [WARN] from reactivemongo.api.MongoConnection in reactivemongo-akka.actor.default-dispatcher-7 - [Supervisor-1/Connection-1] Timeout after 8200 milliseconds while probing the connection monitor: IsPrimaryAvailable#1717249170?
+2020-03-18 09:20:58,176 [ERROR] from play.api.http.DefaultHttpErrorHandler in application-akka.actor.default-dispatcher-9 - 
 
-! @7f72k8dng - Internal server error, for (POST) [/submitForm] ->
+! @7f77o60le - Internal server error, for (POST) [/submitForm] ->
  
 play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[PrimaryUnavailableException: MongoError['No primary node is available! (Supervisor-1/Connection-1)']]]
 	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:335)
@@ -34,1243 +91,118 @@ Caused by: reactivemongo.core.actors.Exceptions$PrimaryUnavailableException: Mon
 	at play.modules.reactivemongo.DefaultReactiveMongoApi.database(DefaultReactiveMongoApi.scala:71)
 	at reactivemongo.api.MongoConnection.database(MongoConnection.scala:108)
 Caused by: reactivemongo.core.actors.Exceptions$InternalState: 
-	at reactivemongo.ChannelDisconnected(d9f35031, {{NodeSet None Node[cluster0-shard-00-00-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=9223372036854775807ns, authenticated={}] | Node[cluster0-shard-00-02-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=9223372036854775807ns, authenticated={}] | Node[cluster0-shard-00-01-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=28221520015936ns, authenticated={}] }})(<time:28221627192650>)
-	at reactivemongo.ChannelDisconnected(aa72c0a9, {{NodeSet None Node[cluster0-shard-00-00-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=28221580315691ns, authenticated={}] | Node[cluster0-shard-00-02-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=9223372036854775807ns, authenticated={}] | Node[cluster0-shard-00-01-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=28221520015936ns, authenticated={}] }})(<time:28221626757285>)
-	at reactivemongo.ChannelDisconnected(73770318, {{NodeSet None Node[cluster0-shard-00-00-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=28221580315691ns, authenticated={}] | Node[cluster0-shard-00-02-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=28221578554746ns, authenticated={}] | Node[cluster0-shard-00-01-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=28221520015936ns, authenticated={}] }})(<time:28221625994404>)
-	at reactivemongo.ChannelConnected(86e10fcb, {{NodeSet None Node[cluster0-shard-00-00-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=28221580315691ns, authenticated={}] | Node[cluster0-shard-00-02-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=28221578554746ns, authenticated={}] | Node[cluster0-shard-00-01-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=28221520015936ns, authenticated={}] }})(<time:28221581521061>)
-	at reactivemongo.ChannelConnected(aa72c0a9, {{NodeSet None Node[cluster0-shard-00-00-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] | Node[cluster0-shard-00-02-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=28221578554746ns, authenticated={}] | Node[cluster0-shard-00-01-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=28221520015936ns, authenticated={}] }})(<time:28221581148559>)
-	at reactivemongo.ChannelConnected(e3da1e0a, {{NodeSet None Node[cluster0-shard-00-00-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] | Node[cluster0-shard-00-02-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=28221578554746ns, authenticated={}] | Node[cluster0-shard-00-01-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=28221520015936ns, authenticated={}] }})(<time:28221580123416>)
-	at reactivemongo.ChannelConnected(73770318, {{NodeSet None Node[cluster0-shard-00-00-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] | Node[cluster0-shard-00-02-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] | Node[cluster0-shard-00-01-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=28221520015936ns, authenticated={}] }})(<time:28221579787053>)
-	at reactivemongo.ChannelConnected(e2da4901, {{NodeSet None Node[cluster0-shard-00-00-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] | Node[cluster0-shard-00-02-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] | Node[cluster0-shard-00-01-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=28221520015936ns, authenticated={}] }})(<time:28221578258576>)
-	at reactivemongo.ChannelConnected(d9f35031, {{NodeSet None Node[cluster0-shard-00-00-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] | Node[cluster0-shard-00-02-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] | Node[cluster0-shard-00-01-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:28221575987795>)
-	at reactivemongo.Start({{NodeSet None Node[cluster0-shard-00-00-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] | Node[cluster0-shard-00-02-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] | Node[cluster0-shard-00-01-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:28221454818245>)
-2020-03-17 16:21:57,585 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.internal-dispatcher-3 - ReactiveMongoApi stopping...
-2020-03-17 16:21:57,604 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.default-dispatcher-8 - ReactiveMongoApi connections are stopped
-2020-03-17 16:21:57,716 [WARN] from reactivemongo.api.MongoConnection in scala-execution-context-global-76 - Connection option 'authSource' deprecated: use option 'authenticationDatabase'
-2020-03-17 16:21:57,952 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-13 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+	at reactivemongo.ScramNonceFailure(SCRAM-SHA-1, 1001)(<time:2922698181438>)
+	at reactivemongo.ScramNonceFailure(SCRAM-SHA-1, 1002)(<time:2922697765174>)
+	at reactivemongo.ScramNonceFailure(SCRAM-SHA-1, 1000)(<time:2922697268475>)
+	at reactivemongo.ConnectAll$IsMaster(2, {{NodeSet Some(Cluster0-shard-0) Node[cluster0-shard-00-00-6qesr.mongodb.net:27017: Secondary (1/1/1 available connections), latency=357612945ns, authenticated={}] | Node[cluster0-shard-00-02-6qesr.mongodb.net:27017: Secondary (1/1/1 available connections), latency=424881719ns, authenticated={}] | Node[cluster0-shard-00-01-6qesr.mongodb.net:27017: Primary (1/1/1 available connections), latency=362892699ns, authenticated={}] }})(<time:2922670604297>)
+	at reactivemongo.IsMaster(false, 2, {{NodeSet Some(Cluster0-shard-0) Node[cluster0-shard-00-00-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=2922311934375ns, authenticated={}] | Node[cluster0-shard-00-02-6qesr.mongodb.net:27017: Secondary (1/1/1 available connections), latency=424881719ns, authenticated={}] | Node[cluster0-shard-00-01-6qesr.mongodb.net:27017: Primary (1/1/1 available connections), latency=362892699ns, authenticated={}] }})(<time:2922670329987>)
+	at reactivemongo.ConnectAll$IsMaster(1, {{NodeSet Some(Cluster0-shard-0) Node[cluster0-shard-00-01-6qesr.mongodb.net:27017: Primary (1/1/1 available connections), latency=362892699ns, authenticated={}] | Node[cluster0-shard-00-02-6qesr.mongodb.net:27017: Secondary (1/1/1 available connections), latency=424881719ns, authenticated={}] | Node[cluster0-shard-00-00-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=2922311934375ns, authenticated={}] }})(<time:2922668560609>)
+	at reactivemongo.IsMaster(true, 1, {{NodeSet Some(Cluster0-shard-0) Node[cluster0-shard-00-01-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=2922303917834ns, authenticated={}] | Node[cluster0-shard-00-02-6qesr.mongodb.net:27017: Secondary (1/1/1 available connections), latency=424881719ns, authenticated={}] | Node[cluster0-shard-00-00-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=2922311934375ns, authenticated={}] }})(<time:2922668217571>)
+	at reactivemongo.ConnectAll$IsMaster(0, {{NodeSet Some(Cluster0-shard-0) Node[cluster0-shard-00-00-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=2922311934375ns, authenticated={}] | Node[cluster0-shard-00-02-6qesr.mongodb.net:27017: Secondary (1/1/1 available connections), latency=424881719ns, authenticated={}] | Node[cluster0-shard-00-01-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=2922303917834ns, authenticated={}] }})(<time:2922662932360>)
+	at reactivemongo.IsMaster(false, 0, {{NodeSet None Node[cluster0-shard-00-00-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=2922311934375ns, authenticated={}] | Node[cluster0-shard-00-02-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=2922214982575ns, authenticated={}] | Node[cluster0-shard-00-01-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=2922303917834ns, authenticated={}] }})(<time:2922662041195>)
+	at reactivemongo.ChannelConnected(ad6cd5e9, {{NodeSet None Node[cluster0-shard-00-00-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=2922311934375ns, authenticated={}] | Node[cluster0-shard-00-02-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=2922214982575ns, authenticated={}] | Node[cluster0-shard-00-01-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=2922303917834ns, authenticated={}] }})(<time:2922326144358>)
+	at reactivemongo.ChannelConnected(dafb4ab9, {{NodeSet None Node[cluster0-shard-00-00-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=2922311934375ns, authenticated={}] | Node[cluster0-shard-00-02-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=2922214982575ns, authenticated={}] | Node[cluster0-shard-00-01-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=2922303917834ns, authenticated={}] }})(<time:2922319083912>)
+	at reactivemongo.ChannelConnected(a5fef397, {{NodeSet None Node[cluster0-shard-00-00-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] | Node[cluster0-shard-00-02-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=2922214982575ns, authenticated={}] | Node[cluster0-shard-00-01-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=2922303917834ns, authenticated={}] }})(<time:2922318465237>)
+	at reactivemongo.ChannelConnected(73c4f24a, {{NodeSet None Node[cluster0-shard-00-00-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] | Node[cluster0-shard-00-02-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=2922214982575ns, authenticated={}] | Node[cluster0-shard-00-01-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:2922311664718>)
+	at reactivemongo.ChannelConnected(95f0943f, {{NodeSet None Node[cluster0-shard-00-00-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] | Node[cluster0-shard-00-02-6qesr.mongodb.net:27017: Unknown (1/1/1 available connections), latency=9223372036854775807ns, authenticated={}] | Node[cluster0-shard-00-01-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:2922303632518>)
+	at reactivemongo.ChannelConnected(0090ba6e, {{NodeSet None Node[cluster0-shard-00-00-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] | Node[cluster0-shard-00-02-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] | Node[cluster0-shard-00-01-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:2922213816994>)
+	at reactivemongo.Start({{NodeSet None Node[cluster0-shard-00-00-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] | Node[cluster0-shard-00-02-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] | Node[cluster0-shard-00-01-6qesr.mongodb.net:27017: Unknown (0/0/1 available connections), latency=9223372036854775807ns, authenticated={}] }})(<time:2921949699186>)
+2020-03-18 09:21:13,409 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.internal-dispatcher-4 - ReactiveMongoApi stopping...
+2020-03-18 09:21:13,454 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.default-dispatcher-9 - ReactiveMongoApi connections are stopped
+2020-03-18 09:21:13,566 [WARN] from reactivemongo.api.MongoConnection in scala-execution-context-global-80 - Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-03-18 09:21:13,777 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-10 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-03-17 16:21:57,954 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-13 - Application started (Dev) (no global state)
-2020-03-17 17:20:51,218 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-8 - 
-
-! @7f7324ba1 - Internal server error, for (POST) [/submitForm] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[object Feed is not a member of package models]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:39)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:34)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:34)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:27)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at scala.util.Either$LeftProjection.map(Either.scala:377)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:62)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:75)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:74)
-	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$5.run(Reloader.scala:57)
-	at java.base/java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:52)
-	at play.runsupport.Reloader.reload(Reloader.scala:494)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
-	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
-	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
-	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
-	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
-2020-03-17 17:21:01,193 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.internal-dispatcher-4 - ReactiveMongoApi stopping...
-2020-03-17 17:21:01,215 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.default-dispatcher-6 - ReactiveMongoApi connections are stopped
-2020-03-17 17:21:01,366 [WARN] from reactivemongo.api.MongoConnection in scala-execution-context-global-71 - Connection option 'authSource' deprecated: use option 'authenticationDatabase'
-2020-03-17 17:21:01,641 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-17 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-03-18 09:21:13,779 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-10 - Application started (Dev) (no global state)
+2020-03-18 09:22:00,152 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.internal-dispatcher-3 - ReactiveMongoApi stopping...
+2020-03-18 09:22:00,171 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.default-dispatcher-6 - ReactiveMongoApi connections are stopped
+2020-03-18 09:22:00,321 [WARN] from reactivemongo.api.MongoConnection in scala-execution-context-global-82 - Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-03-18 09:22:00,504 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-10 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-03-17 17:21:01,642 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-17 - Application started (Dev) (no global state)
-2020-03-17 17:36:15,246 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-28 - 
-
-! @7f7344po4 - Internal server error, for (GET) [/read] ->
- 
-play.sbt.routes.RoutesCompilationException: Compilation error[`)' expected but `.' found]
-	at play.sbt.routes.RoutesCompiler$$anonfun$7.apply(RoutesCompiler.scala:180)
-	at play.sbt.routes.RoutesCompiler$$anonfun$7.apply(RoutesCompiler.scala:178)
-	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:244)
-	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:244)
-	at scala.collection.immutable.List.foreach(List.scala:318)
-	at scala.collection.TraversableLike$class.map(TraversableLike.scala:244)
-	at scala.collection.AbstractTraversable.map(Traversable.scala:105)
-	at play.sbt.routes.RoutesCompiler$.compileRoutes(RoutesCompiler.scala:178)
-	at play.sbt.routes.RoutesCompiler$$anonfun$3.apply(RoutesCompiler.scala:143)
-	at play.sbt.routes.RoutesCompiler$$anonfun$3.apply(RoutesCompiler.scala:141)
-	at scala.Function1$$anonfun$compose$1.apply(Function1.scala:47)
-	at sbt.$tilde$greater$$anonfun$$u2219$1.apply(TypeFunctions.scala:40)
-	at sbt.std.Transform$$anon$4.work(System.scala:63)
-	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:228)
-	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:228)
-	at sbt.ErrorHandling$.wideConvert(ErrorHandling.scala:17)
-	at sbt.Execute.work(Execute.scala:237)
-	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:228)
-	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:228)
-	at sbt.ConcurrentRestrictions$$anon$4$$anonfun$1.apply(ConcurrentRestrictions.scala:159)
-	at sbt.CompletionService$$anon$2.call(CompletionService.scala:28)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at java.base/java.lang.Thread.run(Thread.java:834)
-2020-03-17 17:36:28,068 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-16 - 
-
-! @7f7345j4h - Internal server error, for (GET) [/read] ->
- 
-play.sbt.routes.RoutesCompilationException: Compilation error[`)' expected but `(' found]
-	at play.sbt.routes.RoutesCompiler$$anonfun$7.apply(RoutesCompiler.scala:180)
-	at play.sbt.routes.RoutesCompiler$$anonfun$7.apply(RoutesCompiler.scala:178)
-	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:244)
-	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:244)
-	at scala.collection.immutable.List.foreach(List.scala:318)
-	at scala.collection.TraversableLike$class.map(TraversableLike.scala:244)
-	at scala.collection.AbstractTraversable.map(Traversable.scala:105)
-	at play.sbt.routes.RoutesCompiler$.compileRoutes(RoutesCompiler.scala:178)
-	at play.sbt.routes.RoutesCompiler$$anonfun$3.apply(RoutesCompiler.scala:143)
-	at play.sbt.routes.RoutesCompiler$$anonfun$3.apply(RoutesCompiler.scala:141)
-	at scala.Function1$$anonfun$compose$1.apply(Function1.scala:47)
-	at sbt.$tilde$greater$$anonfun$$u2219$1.apply(TypeFunctions.scala:40)
-	at sbt.std.Transform$$anon$4.work(System.scala:63)
-	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:228)
-	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:228)
-	at sbt.ErrorHandling$.wideConvert(ErrorHandling.scala:17)
-	at sbt.Execute.work(Execute.scala:237)
-	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:228)
-	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:228)
-	at sbt.ConcurrentRestrictions$$anon$4$$anonfun$1.apply(ConcurrentRestrictions.scala:159)
-	at sbt.CompletionService$$anon$2.call(CompletionService.scala:28)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at java.base/java.lang.Thread.run(Thread.java:834)
-2020-03-17 17:38:38,888 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-30 - 
-
-! @7f734d4le - Internal server error, for (GET) [/read] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[not enough arguments for method getOrElse: (default: => B)B.
-Unspecified value parameter default.]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:39)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:34)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:34)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:27)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at scala.util.Either$LeftProjection.map(Either.scala:377)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:62)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:75)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:74)
-	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$5.run(Reloader.scala:57)
-	at java.base/java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:52)
-	at play.runsupport.Reloader.reload(Reloader.scala:494)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
-	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
-	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
-	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
-	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
-2020-03-17 17:39:03,865 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-16 - 
-
-! @7f734efk6 - Internal server error, for (GET) [/read] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[not found: value getThingsWithFilterOrNot]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:39)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:34)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:34)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:27)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at scala.util.Either$LeftProjection.map(Either.scala:377)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:62)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:75)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:74)
-	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$5.run(Reloader.scala:57)
-	at java.base/java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:52)
-	at play.runsupport.Reloader.reload(Reloader.scala:494)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
-	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
-	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
-	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
-	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
-2020-03-17 17:39:15,478 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-16 - 
-
-! @7f734f6om - Internal server error, for (GET) [/read] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[type mismatch;
- found   : String
- required: Option[(String, play.api.libs.json.Json.JsValueWrapper)]]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:39)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:34)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:34)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:27)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at scala.util.Either$LeftProjection.map(Either.scala:377)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:62)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:75)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:74)
-	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$5.run(Reloader.scala:57)
-	at java.base/java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:52)
-	at play.runsupport.Reloader.reload(Reloader.scala:494)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
-	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
-	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
-	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
-	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
-2020-03-17 17:39:36,238 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-28 - 
-
-! @7f734gbh4 - Internal server error, for (GET) [/read] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[not found: type None]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:39)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:34)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:34)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:27)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at scala.util.Either$LeftProjection.map(Either.scala:377)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:62)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:75)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:74)
-	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$5.run(Reloader.scala:57)
-	at java.base/java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:52)
-	at play.runsupport.Reloader.reload(Reloader.scala:494)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
-	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
-	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
-	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
-	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
-2020-03-17 17:40:44,199 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-28 - 
-
-! @7f734k855 - Internal server error, for (GET) [/read] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[type mismatch;
- found   : String
- required: Option[(String, play.api.libs.json.Json.JsValueWrapper)]]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:39)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:34)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:34)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:27)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at scala.util.Either$LeftProjection.map(Either.scala:377)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:62)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:75)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:74)
-	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$5.run(Reloader.scala:57)
-	at java.base/java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:52)
-	at play.runsupport.Reloader.reload(Reloader.scala:494)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
-	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
-	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
-	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
-	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
-2020-03-17 17:40:53,019 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-28 - 
-
-! @7f734kl6b - Internal server error, for (GET) [/read] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[not found: type None]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:39)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:34)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:34)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:27)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at scala.util.Either$LeftProjection.map(Either.scala:377)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:62)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:75)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:74)
-	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$5.run(Reloader.scala:57)
-	at java.base/java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:52)
-	at play.runsupport.Reloader.reload(Reloader.scala:494)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
-	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
-	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
-	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
-	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
-2020-03-17 18:02:57,682 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-33 - 
-
-! @7f737i4l1 - Internal server error, for (GET) [/read] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[type mismatch;
- found   : None.type
- required: String]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:39)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:34)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:34)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:27)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at scala.util.Either$LeftProjection.map(Either.scala:377)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:62)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:75)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:74)
-	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$5.run(Reloader.scala:57)
-	at java.base/java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:52)
-	at play.runsupport.Reloader.reload(Reloader.scala:494)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
-	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
-	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
-	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
-	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
-2020-03-17 18:03:11,790 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-33 - 
-
-! @7f737iphh - Internal server error, for (GET) [/read] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[type mismatch;
- found   : String
- required: Option[(String, play.api.libs.json.Json.JsValueWrapper)]]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:39)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:34)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:34)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:27)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at scala.util.Either$LeftProjection.map(Either.scala:377)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:62)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:75)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:74)
-	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$5.run(Reloader.scala:57)
-	at java.base/java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:52)
-	at play.runsupport.Reloader.reload(Reloader.scala:494)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
-	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
-	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
-	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
-	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
-2020-03-17 18:03:18,320 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-33 - 
-
-! @7f737j98l - Internal server error, for (GET) [/read] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[type mismatch;
- found   : None.type
- required: String]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:39)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:34)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:34)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:27)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at scala.util.Either$LeftProjection.map(Either.scala:377)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:62)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:75)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:74)
-	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$5.run(Reloader.scala:57)
-	at java.base/java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:52)
-	at play.runsupport.Reloader.reload(Reloader.scala:494)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
-	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
-	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
-	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
-	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
-2020-03-17 18:03:26,903 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-33 - 
-
-! @7f737jm0n - Internal server error, for (GET) [/read] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[not found: value Nonasd]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:39)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:34)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:34)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:27)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at scala.util.Either$LeftProjection.map(Either.scala:377)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:62)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:75)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:74)
-	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$5.run(Reloader.scala:57)
-	at java.base/java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:52)
-	at play.runsupport.Reloader.reload(Reloader.scala:494)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
-	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
-	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
-	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
-	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
-2020-03-17 18:03:31,948 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-33 - 
-
-! @7f737k3co - Internal server error, for (GET) [/read] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[type mismatch;
- found   : None.type
- required: String]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:39)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:34)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:34)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:27)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at scala.util.Either$LeftProjection.map(Either.scala:377)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:62)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:75)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:74)
-	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$5.run(Reloader.scala:57)
-	at java.base/java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:52)
-	at play.runsupport.Reloader.reload(Reloader.scala:494)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
-	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
-	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
-	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
-	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
-2020-03-17 18:04:12,654 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-28 - 
-
-! @7f737mbie - Internal server error, for (GET) [/read] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[missing argument list for method getThings in class ThingController
-Unapplied methods are only converted to functions when a function type is expected.
-You can make this conversion explicit by writing `getThings _` or `getThings(_)` instead of `getThings`.]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:39)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:34)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:34)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:27)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at scala.util.Either$LeftProjection.map(Either.scala:377)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:62)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:75)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:74)
-	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$5.run(Reloader.scala:57)
-	at java.base/java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:52)
-	at play.runsupport.Reloader.reload(Reloader.scala:494)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
-	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
-	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
-	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
-	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
-2020-03-17 18:04:18,374 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.internal-dispatcher-5 - ReactiveMongoApi stopping...
-2020-03-17 18:04:18,438 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.default-dispatcher-7 - ReactiveMongoApi connections are stopped
-2020-03-17 18:04:18,587 [WARN] from reactivemongo.api.MongoConnection in scala-execution-context-global-443 - Connection option 'authSource' deprecated: use option 'authenticationDatabase'
-2020-03-17 18:04:18,820 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-33 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-03-18 09:22:00,505 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-10 - Application started (Dev) (no global state)
+2020-03-18 09:22:08,415 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.internal-dispatcher-5 - ReactiveMongoApi stopping...
+2020-03-18 09:22:08,422 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.default-dispatcher-9 - ReactiveMongoApi connections are stopped
+2020-03-18 09:22:08,537 [WARN] from reactivemongo.api.MongoConnection in scala-execution-context-global-77 - Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-03-18 09:22:08,712 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-10 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-03-17 18:04:18,823 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-33 - Application started (Dev) (no global state)
-2020-03-17 18:04:19,136 [ERROR] from play.api.http.DefaultHttpErrorHandler in application-akka.actor.default-dispatcher-6 - 
-
-! @7f737ml7n - Internal server error, for (GET) [/read] ->
- 
-play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[NullPointerException: null]]
-	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:335)
-	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:253)
-	at play.core.server.AkkaHttpServer$$anonfun$2.applyOrElse(AkkaHttpServer.scala:424)
-	at play.core.server.AkkaHttpServer$$anonfun$2.applyOrElse(AkkaHttpServer.scala:420)
-	at scala.concurrent.Future.$anonfun$recoverWith$1(Future.scala:412)
-	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:37)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
-	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:92)
-	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:12)
-	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:81)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:92)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:47)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:47)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
-	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
-	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
-	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
-	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
-Caused by: java.lang.NullPointerException: null
-	at play.api.libs.json.Json$.$anonfun$obj$1(Json.scala:228)
-	at scala.collection.TraversableLike.$anonfun$map$1(TraversableLike.scala:234)
-	at scala.collection.IndexedSeqOptimized.foreach(IndexedSeqOptimized.scala:32)
-	at scala.collection.IndexedSeqOptimized.foreach$(IndexedSeqOptimized.scala:29)
-	at scala.collection.mutable.WrappedArray.foreach(WrappedArray.scala:38)
-	at scala.collection.TraversableLike.map(TraversableLike.scala:234)
-	at scala.collection.TraversableLike.map$(TraversableLike.scala:227)
-	at scala.collection.AbstractTraversable.map(Traversable.scala:104)
-	at play.api.libs.json.Json$.obj(Json.scala:228)
-	at controllers.ThingController.$anonfun$getThings$2(ThingController.scala:54)
-	at scala.util.Success.$anonfun$map$1(Try.scala:251)
-	at scala.util.Success.map(Try.scala:209)
-	at scala.concurrent.Future.$anonfun$map$1(Future.scala:287)
-	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:29)
-	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:29)
-	... 13 common frames omitted
-2020-03-17 18:04:40,149 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-33 - 
-
-! @7f737o09p - Internal server error, for (GET) [/read] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[type mismatch;
- found   : scala.collection.immutable.Nil.type
- required: (String, play.api.libs.json.Json.JsValueWrapper)]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:39)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:34)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:34)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:27)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at scala.util.Either$LeftProjection.map(Either.scala:377)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:62)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:75)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:74)
-	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$5.run(Reloader.scala:57)
-	at java.base/java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:52)
-	at play.runsupport.Reloader.reload(Reloader.scala:494)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
-	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
-	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
-	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
-	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
-2020-03-17 18:04:49,724 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-33 - 
-
-! @7f737oee8 - Internal server error, for (GET) [/read] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[type mismatch;
- found   : scala.collection.immutable.Nil.type
- required: (String, play.api.libs.json.Json.JsValueWrapper)]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:39)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:34)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:34)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:27)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at scala.util.Either$LeftProjection.map(Either.scala:377)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:62)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:75)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:74)
-	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$5.run(Reloader.scala:57)
-	at java.base/java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:52)
-	at play.runsupport.Reloader.reload(Reloader.scala:494)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
-	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
-	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
-	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
-	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
-2020-03-17 18:04:54,612 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.internal-dispatcher-5 - ReactiveMongoApi stopping...
-2020-03-17 18:04:54,622 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.default-dispatcher-6 - ReactiveMongoApi connections are stopped
-2020-03-17 18:04:54,748 [WARN] from reactivemongo.api.MongoConnection in scala-execution-context-global-443 - Connection option 'authSource' deprecated: use option 'authenticationDatabase'
-2020-03-17 18:04:54,971 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-39 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-03-18 09:22:08,713 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-10 - Application started (Dev) (no global state)
+2020-03-18 09:23:13,749 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.internal-dispatcher-5 - ReactiveMongoApi stopping...
+2020-03-18 09:23:13,764 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.default-dispatcher-8 - ReactiveMongoApi connections are stopped
+2020-03-18 09:23:13,848 [WARN] from reactivemongo.api.MongoConnection in scala-execution-context-global-80 - Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-03-18 09:23:14,009 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-13 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-03-17 18:04:54,974 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-39 - Application started (Dev) (no global state)
-2020-03-17 18:04:55,287 [ERROR] from play.api.http.DefaultHttpErrorHandler in application-akka.actor.default-dispatcher-6 - 
-
-! @7f737omk8 - Internal server error, for (GET) [/read] ->
- 
-play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[NoSuchElementException: None.get]]
-	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:335)
-	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:253)
-	at play.core.server.AkkaHttpServer$$anonfun$2.applyOrElse(AkkaHttpServer.scala:424)
-	at play.core.server.AkkaHttpServer$$anonfun$2.applyOrElse(AkkaHttpServer.scala:420)
-	at scala.concurrent.Future.$anonfun$recoverWith$1(Future.scala:412)
-	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:37)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
-	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:92)
-	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:12)
-	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:81)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:92)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:47)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:47)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
-	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
-	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
-	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
-	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
-Caused by: java.util.NoSuchElementException: None.get
-	at scala.None$.get(Option.scala:349)
-	at scala.None$.get(Option.scala:347)
-	at controllers.ThingController.$anonfun$getThings$2(ThingController.scala:54)
-	at scala.util.Success.$anonfun$map$1(Try.scala:251)
-	at scala.util.Success.map(Try.scala:209)
-	at scala.concurrent.Future.$anonfun$map$1(Future.scala:287)
-	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:29)
-	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:29)
-	... 13 common frames omitted
-2020-03-17 18:05:09,396 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.internal-dispatcher-4 - ReactiveMongoApi stopping...
-2020-03-17 18:05:09,414 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.default-dispatcher-6 - ReactiveMongoApi connections are stopped
-2020-03-17 18:05:09,536 [WARN] from reactivemongo.api.MongoConnection in scala-execution-context-global-236 - Connection option 'authSource' deprecated: use option 'authenticationDatabase'
-2020-03-17 18:05:09,717 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-38 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-03-18 09:23:14,010 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-13 - Application started (Dev) (no global state)
+2020-03-18 09:29:17,689 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.internal-dispatcher-3 - ReactiveMongoApi stopping...
+2020-03-18 09:29:17,705 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.default-dispatcher-7 - ReactiveMongoApi connections are stopped
+2020-03-18 09:29:17,799 [WARN] from reactivemongo.api.MongoConnection in scala-execution-context-global-445 - Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-03-18 09:29:17,917 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-8 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-03-17 18:05:09,718 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-38 - Application started (Dev) (no global state)
-2020-03-17 18:05:23,761 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-39 - 
-
-! @7f7380cmj - Internal server error, for (GET) [/read] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[type mismatch;
- found   : Specializable
- required: play.api.libs.json.Json.JsValueWrapper]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:39)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:34)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:34)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:27)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at scala.util.Either$LeftProjection.map(Either.scala:377)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:62)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:75)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:74)
-	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$5.run(Reloader.scala:57)
-	at java.base/java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:52)
-	at play.runsupport.Reloader.reload(Reloader.scala:494)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
-	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
-	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
-	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
-	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
-2020-03-17 18:05:49,670 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-39 - 
-
-! @7f7381p5o - Internal server error, for (GET) [/read] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[object net.sf.ehcache.search.expression.NotNull is not a value]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:39)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:34)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:34)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:27)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at scala.util.Either$LeftProjection.map(Either.scala:377)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:62)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:75)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:74)
-	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$5.run(Reloader.scala:57)
-	at java.base/java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:52)
-	at play.runsupport.Reloader.reload(Reloader.scala:494)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
-	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
-	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
-	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
-	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
-2020-03-17 18:07:14,794 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.internal-dispatcher-2 - ReactiveMongoApi stopping...
-2020-03-17 18:07:14,826 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.default-dispatcher-8 - ReactiveMongoApi connections are stopped
-2020-03-17 18:07:15,023 [WARN] from reactivemongo.api.MongoConnection in scala-execution-context-global-691 - Connection option 'authSource' deprecated: use option 'authenticationDatabase'
-2020-03-17 18:07:15,346 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-39 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-03-18 09:29:17,918 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-8 - Application started (Dev) (no global state)
+2020-03-18 09:29:45,807 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.internal-dispatcher-2 - ReactiveMongoApi stopping...
+2020-03-18 09:29:45,816 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.default-dispatcher-10 - ReactiveMongoApi connections are stopped
+2020-03-18 09:29:45,878 [WARN] from reactivemongo.api.MongoConnection in scala-execution-context-global-447 - Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-03-18 09:29:46,021 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-26 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-03-17 18:07:15,347 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-39 - Application started (Dev) (no global state)
-2020-03-17 18:15:21,444 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-34 - 
+2020-03-18 09:29:46,022 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-26 - Application started (Dev) (no global state)
+2020-03-18 09:29:55,412 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.internal-dispatcher-5 - ReactiveMongoApi stopping...
+2020-03-18 09:29:55,422 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.default-dispatcher-9 - ReactiveMongoApi connections are stopped
+2020-03-18 09:29:55,519 [WARN] from reactivemongo.api.MongoConnection in scala-execution-context-global-447 - Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-03-18 09:29:55,732 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-24 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
-! @7f7398d0i - Internal server error, for (GET) [/read] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[not enough arguments for method apply: (thingList: List[models.Thing])play.twirl.api.HtmlFormat.Appendable in object footer.
-Unspecified value parameter thingList.]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:39)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:34)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:34)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:27)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at scala.util.Either$LeftProjection.map(Either.scala:377)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:62)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:75)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:74)
-	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$5.run(Reloader.scala:57)
-	at java.base/java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:52)
-	at play.runsupport.Reloader.reload(Reloader.scala:494)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
-	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
-	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
-	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
-	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
-2020-03-17 18:15:44,261 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-34 - 
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
 
-! @7f7399kkl - Internal server error, for (GET) [/read] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[type mismatch;
- found   : play.twirl.api.HtmlFormat.Appendable
-    (which expands to)  play.twirl.api.Html
- required: List[models.Thing]]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:39)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:34)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:34)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:27)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at scala.util.Either$LeftProjection.map(Either.scala:377)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:62)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:75)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:74)
-	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$5.run(Reloader.scala:57)
-	at java.base/java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:52)
-	at play.runsupport.Reloader.reload(Reloader.scala:494)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
-	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
-	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
-	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
-	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
-2020-03-17 18:15:51,938 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-28 - 
+2020-03-18 09:29:55,734 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-24 - Application started (Dev) (no global state)
+2020-03-18 09:30:10,389 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.internal-dispatcher-5 - ReactiveMongoApi stopping...
+2020-03-18 09:30:10,396 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.default-dispatcher-6 - ReactiveMongoApi connections are stopped
+2020-03-18 09:30:10,469 [WARN] from reactivemongo.api.MongoConnection in scala-execution-context-global-79 - Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-03-18 09:30:10,620 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-26 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
-! @7f739a642 - Internal server error, for (GET) [/creatething] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[type mismatch;
- found   : play.twirl.api.HtmlFormat.Appendable
-    (which expands to)  play.twirl.api.Html
- required: List[models.Thing]]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:39)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:34)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:34)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:27)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at scala.util.Either$LeftProjection.map(Either.scala:377)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:62)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:75)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:74)
-	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$5.run(Reloader.scala:57)
-	at java.base/java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:52)
-	at play.runsupport.Reloader.reload(Reloader.scala:494)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
-	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
-	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
-	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
-	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
-2020-03-17 18:16:34,393 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-28 - 
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
 
-! @7f739cgop - Internal server error, for (GET) [/creatething] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[not enough arguments for method apply: (form: play.api.data.Form[models.Thing], things: List[models.Thing])(implicit messagesProvider: play.api.i18n.MessagesProvider)play.twirl.api.HtmlFormat.Appendable in object things.
-Unspecified value parameter things.]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:32)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:39)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:34)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:34)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:27)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:62)
-	at scala.util.Either$LeftProjection.map(Either.scala:377)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:62)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:75)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:74)
-	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$5.run(Reloader.scala:57)
-	at java.base/java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:52)
-	at play.runsupport.Reloader.reload(Reloader.scala:494)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
-	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
-	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
-	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
-	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
+2020-03-18 09:30:10,621 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-26 - Application started (Dev) (no global state)
+2020-03-18 09:31:08,989 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.internal-dispatcher-2 - ReactiveMongoApi stopping...
+2020-03-18 09:31:08,994 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.default-dispatcher-11 - ReactiveMongoApi connections are stopped
+2020-03-18 09:31:09,096 [WARN] from reactivemongo.api.MongoConnection in scala-execution-context-global-445 - Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-03-18 09:31:09,200 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-24 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2020-03-18 09:31:09,201 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-24 - Application started (Dev) (no global state)
+2020-03-18 09:31:28,265 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.internal-dispatcher-2 - ReactiveMongoApi stopping...
+2020-03-18 09:31:28,272 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.default-dispatcher-10 - ReactiveMongoApi connections are stopped
+2020-03-18 09:31:28,379 [WARN] from reactivemongo.api.MongoConnection in scala-execution-context-global-79 - Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-03-18 09:31:28,617 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-24 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2020-03-18 09:31:28,621 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-24 - Application started (Dev) (no global state)
+2020-03-18 09:31:36,827 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.internal-dispatcher-5 - ReactiveMongoApi stopping...
+2020-03-18 09:31:36,830 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.default-dispatcher-9 - ReactiveMongoApi connections are stopped
+2020-03-18 09:31:36,943 [WARN] from reactivemongo.api.MongoConnection in scala-execution-context-global-447 - Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-03-18 09:31:37,162 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-24 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2020-03-18 09:31:37,163 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-24 - Application started (Dev) (no global state)
