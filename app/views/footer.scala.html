@@ -1,14 +1,19 @@
-@import scala.collection.mutable.ListBuffer
-@(thingList: List[ThingWithID])
+@(thingList: List[ThingWithID])(implicit messagesProvider: MessagesProvider)
 
-<div>
-    <ul>
+<div class="w-50 m-3 p-2 border rounded" >
+    <ul class="list-group">
         @println(thingList)
         @for(i <- thingList.indices) {
-            <li>@thingList(i).toString</li>
-            <form action="@routes.ThingController.deleteThing(thingList(i)._id.stringify)" method="get">
+            <li class="list-group-item" style="background-color: #eee">@thingList(i).toString
+
+            <form class="m-1" action="@routes.ThingController.deleteThing(thingList(i)._id.stringify)" method="get">
                 <button type="submit" name="delete" value="delete">Delete</button>
             </form>
+                <a class="btn" href="@routes.ThingController.updateThing(thingList(i)._id.stringify )">Update</a>
+@*            <form class="m-1" action="@routes.ThingController.updateThing(thingList(i)._id.stringify)" method="post">*@
+@*                <button type="submit" name="update" value="update">Update</button>*@
+@*            </form>*@
+            </li>
         }
 
     </ul>
