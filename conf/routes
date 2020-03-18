@@ -6,7 +6,8 @@ GET         /                                controllers.HomeController.index
 #GET         /createperson                controllers.ApplicationUsingJsonReadersWriters.create
 GET         /creatething                     controllers.ThingController.showThingForm
 POST        /createFromJson                  controllers.ThingController.createFromJson
-POST        /submitForm                      controllers.ThingController.submitForm
+POST        /creatething                     controllers.ThingController.submitForm
+POST        /deletething                     controllers.ThingController.deleteThing(name: String)
 GET         /read                            controllers.ThingController.getThings()
 GET         /read/:filterValue/:value        controllers.ThingController.getThingsWithFilter(filterValue: String, value: String)
 

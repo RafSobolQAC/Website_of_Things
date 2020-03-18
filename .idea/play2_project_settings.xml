@@ -20,7 +20,7 @@
         <entry key="recipies_new_play_version">
           <value>
             <ProjectSettingsEntry>
-              <option name="confDir" value="$PROJECT_DIR$/app" />
+              <option name="sourceDir" value="$PROJECT_DIR$/app" />
               <option name="templateImports">
                 <list>
                   <option value="_root_.play.twirl.api.TwirlFeatureImports._" />
@@ -50,6 +50,7 @@
         <entry key="website_of_things">
           <value>
             <ProjectSettingsEntry>
+              <option name="sourceDir" value="$PROJECT_DIR$/app" />
               <option name="confDir" value="$PROJECT_DIR$/app" />
               <option name="playDistrPath" value="$USER_HOME$/.ivy2/cache/com.typesafe.play/play_2.12/jars/play_2.12-2.8.1.jar" />
               <option name="templateImports">
@@ -72,6 +73,7 @@
               <option name="routesImports">
                 <list>
                   <option value="controllers.Assets.Asset" />
+                  <option value="path.to.Binders._" />
                 </list>
               </option>
               <option name="uri" value="$PROJECT_DIR$" />

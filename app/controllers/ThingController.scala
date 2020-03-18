@@ -1,23 +1,22 @@
 package controllers
 
-import reactivemongo.play.json._
 import javax.inject.{Inject, _}
 import models.{Tag, Thing}
 import play.api.mvc._
 import play.modules.reactivemongo.{MongoController, ReactiveMongoApi, ReactiveMongoComponents}
 import reactivemongo.play.json._
 import models.JsonFormats._
-import net.sf.ehcache.search.expression.NotNull
 import play.api.libs.json.{JsValue, Json}
 import reactivemongo.api.Cursor
 import reactivemongo.play.json.collection.{JSONCollection, _}
-
-import scala.concurrent.{ExecutionContext, Future}
+import scala.concurrent.duration.Duration
+import scala.concurrent.{Await, ExecutionContext, Future}
 
 
 class ThingController @Inject()(
                                  components: ControllerComponents,
                                  val reactiveMongoApi: ReactiveMongoApi
+
                                ) extends AbstractController(components)
   with MongoController with ReactiveMongoComponents with play.api.i18n.I18nSupport {
 
@@ -25,7 +24,7 @@ class ThingController @Inject()(
 
   def collection: Future[JSONCollection] = database.map(_.collection[JSONCollection]("things"))
 
-  implicit var thingsList: List[Thing] = List()
+  var thingsList: List[Thing] = List()
 
   def makeThings = {
     println("Done!")
@@ -48,18 +47,33 @@ class ThingController @Inject()(
 
   def create(thing: Thing) = Action.async { implicit request: Request[AnyContent] =>
     val futureResult = collection.flatMap(_.insert.one(thing))
+    makeThings
     futureResult.map(_ => Ok(views.html.things(Thing.createThingForm, thingsList)))
   }
 
   def createFromJson: Action[JsValue] = Action.async(parse.json) { request =>
     request.body.validate[Thing].map { thing =>
-      collection.flatMap(_.insert.one(thing)).map { _ => Ok("Thing created!")
+      collection.flatMap(_.insert.one(thing)).map { _ =>
+        makeThings
+        Ok("Thing created!")
       }
     }.getOrElse(Future.successful(BadRequest("Invalid Json format!")))
   }
 
+
+
+  def deleteThingFromForm = Action.async(parse.json) { implicit request: Request[JsValue] =>
+    request.body.validate[Thing].map {thing =>
+      collection.flatMap(_.delete.one(thing)).map {_ =>
+        Await.result(makeThings,Duration.Inf)
+
+        Ok("Deleted!")
+      }
+    }.getOrElse(Future.successful(BadRequest("Invalid Json!")))
+  }
+
   def showThingForm = Action { implicit request: Request[AnyContent] =>
-    makeThings
+    Await.result(makeThings, Duration.Inf)
     Ok(views.html.things(Thing.createThingForm, thingsList))
   }
 
@@ -67,7 +81,21 @@ class ThingController @Inject()(
     Thing.createThingForm.bindFromRequest.fold({ formWithErrors =>
       Future.successful(BadRequest(views.html.things(formWithErrors, thingsList)))
     }, { thing =>
-      collection.flatMap(_.insert.one(thing)).map(_ => Ok(views.html.things(Thing.createThingForm, thingsList)))
+      collection.flatMap(_.insert.one(thing)).map(_ => {
+        Await.result(makeThings, Duration.Inf)
+        Ok(views.html.things(Thing.createThingForm, thingsList))
+      }
+      )
+    })
+  }
+
+  def deleteThing(name: String) = Action.async {implicit request: Request[AnyContent] =>
+    collection.flatMap(_.delete.one(
+      Json.obj({"name" -> name})
+
+    )).map(_ => {
+      Await.result(makeThings, Duration.Inf)
+      Ok(views.html.things(Thing.createThingForm, thingsList))
     })
   }
 
@@ -86,6 +114,8 @@ class ThingController @Inject()(
       Ok(views.html.things(Thing.createThingForm, thingsList))
     }
   }
+
+
 
   def getOrNothing(filter: Option[(String, Json.JsValueWrapper)]) = {
     if (filter.isDefined) Json.obj(filter.get) else Json.obj()

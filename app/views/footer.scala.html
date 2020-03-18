@@ -6,6 +6,10 @@
         @println(thingList)
         @for(i <- thingList.indices) {
             <li>@thingList(i).toString</li>
+            <form action="@routes.ThingController.deleteThing(thingList(i).name)" method="post">
+                <button type="submit" name="delete" value="delete">Delete</button>
+            </form>
         }
+
     </ul>
 </div>
