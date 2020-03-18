@@ -1,12 +1,12 @@
 @import scala.collection.mutable.ListBuffer
-@(thingList: List[Thing])
+@(thingList: List[ThingWithID])
 
 <div>
     <ul>
         @println(thingList)
         @for(i <- thingList.indices) {
             <li>@thingList(i).toString</li>
-            <form action="@routes.ThingController.deleteThing(thingList(i).name)" method="post">
+            <form action="@routes.ThingController.deleteThing(thingList(i)._id.stringify)" method="get">
                 <button type="submit" name="delete" value="delete">Delete</button>
             </form>
         }
