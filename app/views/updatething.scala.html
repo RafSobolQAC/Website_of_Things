@@ -1,15 +1,9 @@
 @import scala.collection.mutable.ListBuffer
 @(thingList: List[ThingWithID], idToUpdate: String, form: Form[Thing])(implicit messagesProvider: MessagesProvider)
 
-@main(s"Update thing $idToUpdate")(thingList) {
-    @helper.form(routes.ThingController.updateThing(idToUpdate)) {
-        @helper.inputText(form("name"), 'id -> "ThingName", 'class -> "InputField")
-        @helper.inputText(form("price"), 'id -> "ThingPrice", 'class -> "InputField")
-        @helper.repeat(form("tags"), min = 3) { tagField =>
-            @helper.inputText(tagField, 'class -> "InputField")
-        }
-        <button type="submit">Update thing @idToUpdate</button>
+    @{
+        val thingBeingGot = thingList.filter(el => el._id.stringify == idToUpdate).head
+        val prefilledForm: Form[Thing] = form.fill(Thing(thingBeingGot.name, thingBeingGot.price, thingBeingGot.tags))
 
+        things(prefilledForm, thingList, s"Update thing $idToUpdate", routes.ThingController.updateThing(idToUpdate))
     }
-
-}

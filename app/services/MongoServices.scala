@@ -32,7 +32,7 @@ class MongoServices @Inject()(
     collection.flatMap(_.delete.one(
       Json.obj(
         {
-          "_id" -> BSONObjectID.parse(id).get
+          "_id" -> BSONObjectID.parse(id).getOrElse(throw new Exception("Wrong ID!"))
         }
       )))
   }

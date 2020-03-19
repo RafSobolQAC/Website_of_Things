@@ -64,7 +64,7 @@ class ThingController @Inject()(
     Thing.createThingForm.bindFromRequest.fold({ formWithErrors =>
       Future.successful(BadRequest(views.html.updatething(thingsList, id, formWithErrors)))
     }, { thing =>
-      mongoServices.updateThing(id, thing).map(_ => {
+      mongoServices.updateThing(id, thingWithNoEmptyTags(thing)).map(_ => {
         Await.result(makeThings, Duration.Inf)
         Ok(views.html.things(Thing.createThingForm, thingsList))
 
