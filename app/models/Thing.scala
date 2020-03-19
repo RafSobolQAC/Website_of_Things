@@ -26,7 +26,7 @@ case class ThingWithID(
   override def toString: String = s"Thing: $name, costs $price, and it has: ${Thing.listToString(tags)}"
 
 }
-
+case class FilterSearch(var filter: String, var search: String)
 
 object Thing {
   val createThingForm: Form[Thing] = Form(
@@ -44,6 +44,12 @@ object Thing {
     sbuilder.toString()
   }
 
+  val createSearchForm: Form[FilterSearch] = Form(
+    mapping(
+      "filter" -> nonEmptyText,
+      "search" -> text
+    )(FilterSearch.apply)(FilterSearch.unapply)
+  )
 }
 
 object JsonFormats {

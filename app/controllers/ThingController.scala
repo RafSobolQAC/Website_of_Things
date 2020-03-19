@@ -78,6 +78,11 @@ class ThingController @Inject()(
     Ok(views.html.things(Thing.createThingForm, thingsList))
   }
 
+  def showSearchForm = Action { implicit request: Request[AnyContent] =>
+    Await.result(makeThings, Duration.Inf)
+    Ok(views.html.search(Thing.createSearchForm, thingsList))
+  }
+
   def thingWithNoEmptyTags(thing: Thing) = {
     thing.tags = thing.tags.filter(el => el.nonEmpty)
     thing
@@ -103,6 +108,17 @@ class ThingController @Inject()(
     })
   }
 
+  def submitSearchForm: Action[AnyContent] = Action.async { implicit request: Request[AnyContent] =>
+    Thing.createSearchForm.bindFromRequest.fold({ formWithErrors =>
+      Future.successful(BadRequest(views.html.search(formWithErrors, thingsList)))
+    }, { search =>
+      mongoServices.getThings(getOrNothing(filterGetterGetter(search.filter, search.search))).map { things =>
+        thingsList = things
+        Ok(views.html.justThings(thingsList))
+      }
+    })
+  }
+
   def getThings(filter: Option[(String, Json.JsValueWrapper)] = None): Action[AnyContent] = Action.async { implicit request: Request[AnyContent] =>
     mongoServices.getThings(getOrNothing(filter)).map { things =>
       thingsList = things
@@ -110,13 +126,30 @@ class ThingController @Inject()(
     }
   }
 
-
   def getOrNothing(filter: Option[(String, Json.JsValueWrapper)]) = {
-    if (filter.isDefined) Json.obj(filter.get) else Json.obj()
+    if (filter.isDefined) {
+      Json.obj(filter.get)
+    } else {
+      Json.obj()
+    }
+  }
+  def filterGetterGetter(filtered: String, value: String) = {
+    if (filtered == "price") filterGetter(filtered, BigDecimal(value))
+    else filterGetter(filtered, value)
+  }
+  def filterGetter(filtered: String, value: Any) = {
+    value match {
+      case decimal: BigDecimal => getBigDecWithFilter(filtered, decimal)
+      case string: String => getThingsWithFilter(filtered, string)
+    }
+
   }
 
-  def getThingsWithFilter(filtered: String, value: String): Action[AnyContent] = {
-    getThings(Some((filtered, Json.toJsFieldJsValueWrapper(value))))
+  def getBigDecWithFilter(filtered: String, value: BigDecimal) = {
+    Some((filtered, Json.toJsFieldJsValueWrapper(value)))
+  }
+  def getThingsWithFilter(filtered: String, value: String) = {
+    Some((filtered, Json.toJsFieldJsValueWrapper(value)))
   }
 
 

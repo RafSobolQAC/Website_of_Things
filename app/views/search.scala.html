@@ -1,10 +1,14 @@
 @import models.Thing
-@(form: Form[Thing],
+@(form: Form[FilterSearch],
         things: List[ThingWithID],
-        filterOptions: List[(String, String)] = List("name" -> "name", "price" -> "price", "tag" -> "tag"))(implicit messagesProvider: MessagesProvider)
+        filterOptions: List[(String, String)] = List("name" -> "Name", "price" -> "Price", "tags" -> "Tag"))(implicit messagesProvider: MessagesProvider)
 
 @main("Search")(things) {
-    @helper.select(
-        form("name"), filterOptions
-    )
+    @helper.form(routes.ThingController.submitSearchForm) {
+        @helper.select(
+            form("filter"), filterOptions, 'id -> "SearchFilter", 'class -> "SelectField"
+        )
+        @helper.inputText(form("search"), 'id -> "SearchValue", 'class -> "InputField")
+        <button type="submit">Search for things</button>
+    }
 }

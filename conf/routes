@@ -10,8 +10,8 @@ GET         /deletething/:id                 controllers.ThingController.deleteT
 GET         /read                            controllers.ThingController.getThings()
 POST        /updatething/:id                 controllers.ThingController.updateThing(id: String)
 GET         /updatething/:id                 controllers.ThingController.showUpdateForm(id: String)
-GET         /read/:filterValue/:value        controllers.ThingController.getThingsWithFilter(filterValue: String, value: String)
-GET /search controllers.ThingController.showSearchForm
+GET         /search                          controllers.ThingController.showSearchForm
+POST        /search                          controllers.ThingController.submitSearchForm
 #GET         /justthings/:id                  controllers.ThingController.getThings()
 #GET         /findByName/:lastName        controllers.ApplicationUsingJsonReadersWriters.findByName(lastName: String)
 
