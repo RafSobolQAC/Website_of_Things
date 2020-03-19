@@ -12,7 +12,7 @@ POST        /updatething/:id        controllers.ThingController.updateThing(id: 
 GET         /updatething/:id        controllers.ThingController.showUpdateForm(id: String)
 GET         /search                 controllers.ThingController.showSearchForm
 POST        /search                 controllers.ThingController.submitSearchForm
-
+GET         /about                  controllers.HomeController.aboutMe
 GET         /makerandom             controllers.ThingController.makeAddToDb
 #GET         /justthings/:id                  controllers.ThingController.getThings()
 #GET         /findByName/:lastName        controllers.ApplicationUsingJsonReadersWriters.findByName(lastName: String)

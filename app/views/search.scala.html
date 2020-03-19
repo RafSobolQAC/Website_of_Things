@@ -4,11 +4,11 @@
         filterOptions: List[(String, String)] = List("name" -> "Name", "price" -> "Price", "tags" -> "Tag"))(implicit messagesProvider: MessagesProvider)
 
 @main("Search")(things) {
-    @helper.form(routes.ThingController.submitSearchForm) {
+    @helper.form(routes.ThingController.submitSearchForm, 'class -> "form-group m-3 border p-1") {
         @helper.select(
-            form("filter"), filterOptions, 'id -> "SearchFilter", 'class -> "SelectField"
+            form("filter"), filterOptions, 'id -> "SearchFilter", 'class -> "SelectField form-control w-50", '_label -> "Which property?"
         )
-        @helper.inputText(form("search"), 'id -> "SearchValue", 'class -> "InputField")
-        <button type="submit">Search for things</button>
+        @helper.inputText(form("search"), 'id -> "SearchValue", 'class -> "InputField form-control w-50", '_label -> "What value to look for?")
+        <button class="btn btn-info" type="submit">Search for things</button>
     }
 }

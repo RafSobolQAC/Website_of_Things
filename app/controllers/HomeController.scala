@@ -14,4 +14,7 @@ class HomeController @Inject()(
     Ok(views.html.index("Done!"))
   }
 
+  def aboutMe: Action[AnyContent] = Action {implicit request: Request[AnyContent] =>
+    Ok(views.html.about())
+  }
 }

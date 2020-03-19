@@ -139,7 +139,7 @@ class ThingController @Inject()(
     }, { search =>
       mongoServices.getThings(getOrNothing(filterGetterGetter(search.filter, search.search))).map { things =>
         thingsList = things
-        Ok(views.html.justThings(thingsList))
+        Ok(views.html.search(Thing.createSearchForm.fill(search), thingsList))
       }
     })
   }
@@ -160,8 +160,17 @@ class ThingController @Inject()(
   }
 
   def filterGetterGetter(filtered: String, value: String) = {
-    if (filtered == "price") filterGetter(filtered, BigDecimal(value))
-    else filterGetter(filtered, value)
+    if (filtered == "price") {
+      try {
+        filterGetter(filtered, BigDecimal(value))
+      } catch {
+        case _: Throwable => None
+      }
+    }
+    else {
+      if (value.nonEmpty) filterGetter(filtered, value)
+      else None
+    }
   }
 
   def filterGetter(filtered: String, value: Any) = {
