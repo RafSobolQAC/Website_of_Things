@@ -10,10 +10,48 @@
             </ProjectSettingsEntry>
           </value>
         </entry>
+        <entry key="Website_of_Things">
+          <value>
+            <ProjectSettingsEntry>
+              <option name="playDistrPath" value="$USER_HOME$/.ivy2/cache/com.typesafe.play/play_2.12/jars/play_2.12-2.8.1.jar" />
+            </ProjectSettingsEntry>
+          </value>
+        </entry>
         <entry key="recipies_new_play_version">
           <value>
             <ProjectSettingsEntry>
               <option name="confDir" value="$PROJECT_DIR$/app" />
+              <option name="templateImports">
+                <list>
+                  <option value="_root_.play.twirl.api.TwirlFeatureImports._" />
+                  <option value="_root_.play.twirl.api.TwirlHelperImports._" />
+                  <option value="_root_.play.twirl.api.Html" />
+                  <option value="_root_.play.twirl.api.JavaScript" />
+                  <option value="_root_.play.twirl.api.Txt" />
+                  <option value="_root_.play.twirl.api.Xml" />
+                  <option value="models._" />
+                  <option value="controllers._" />
+                  <option value="play.api.i18n._" />
+                  <option value="views.xml._" />
+                  <option value="play.api.templates.PlayMagic._" />
+                  <option value="play.api.mvc._" />
+                  <option value="play.api.data._" />
+                </list>
+              </option>
+              <option name="routesImports">
+                <list>
+                  <option value="controllers.Assets.Asset" />
+                </list>
+              </option>
+              <option name="uri" value="$PROJECT_DIR$" />
+            </ProjectSettingsEntry>
+          </value>
+        </entry>
+        <entry key="website_of_things">
+          <value>
+            <ProjectSettingsEntry>
+              <option name="confDir" value="$PROJECT_DIR$/app" />
+              <option name="playDistrPath" value="$USER_HOME$/.ivy2/cache/com.typesafe.play/play_2.12/jars/play_2.12-2.8.1.jar" />
               <option name="templateImports">
                 <list>
                   <option value="_root_.play.twirl.api.TwirlFeatureImports._" />

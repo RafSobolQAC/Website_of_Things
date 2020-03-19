@@ -1,0 +1,17 @@
+@import models.Thing
+@import models.Tag
+@(form: Form[Thing], things: List[Thing])(implicit messagesProvider: MessagesProvider)
+
+
+@main("Create thing")(things) {
+    @helper.form(routes.ThingController.submitForm) {
+        @helper.inputText(form("name"), 'id -> "ThingName", 'class -> "InputField")
+        @helper.inputText(form("price"), 'id -> "ThingPrice", 'class -> "InputField")
+        @helper.repeat(form("tags"), min = 3) { tagField =>
+            @helper.inputText(tagField("name"), 'class -> "InputField")
+        }
+        <button type="submit">Create recipe</button>
+
+    }
+
+}
