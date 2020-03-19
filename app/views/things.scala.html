@@ -2,6 +2,7 @@
 @(form: Form[Thing], things: List[ThingWithID])(implicit messagesProvider: MessagesProvider)
 
 
+
 @main("Create thing")(things) {
     @helper.form(routes.ThingController.submitForm) {
         @helper.inputText(form("name"), 'id -> "ThingName", 'class -> "InputField")

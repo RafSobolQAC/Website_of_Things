@@ -7,10 +7,11 @@ import reactivemongo.bson.BSONObjectID
 import reactivemongo.api.bson._
 import scala.util.Try
 import reactivemongo.play.json.BSONFormats.BSONObjectIDFormat
+
 case class Thing(
                   name: String,
                   price: BigDecimal,
-                  tags: List[String]
+                  var tags: List[String]
                 ) {
   override def toString: String = s"Thing: $name, costs $price, and it has: ${Thing.listToString(tags)}"
 }
@@ -20,12 +21,11 @@ case class ThingWithID(
                         _id: BSONObjectID,
                         name: String,
                         price: BigDecimal,
-                        tags: List[String]
+                        var tags: List[String]
                       ) {
   override def toString: String = s"Thing: $name, costs $price, and it has: ${Thing.listToString(tags)}"
 
 }
-
 
 
 object Thing {

@@ -55,18 +55,32 @@ class ThingController @Inject()(
     })
   }
 
-  def updateThing(id: String) = Action.async {implicit request: Request[AnyContent] =>
-    mongoServices.updateThing(id).map(_ => {
-      makeThings
-      Ok(views.html.things(Thing.createThingForm, thingsList))
+
+  def updateThing(id: String) = Action.async { implicit request: Request[AnyContent] =>
+    Thing.createThingForm.bindFromRequest.fold({ formWithErrors =>
+      Future.successful(BadRequest(views.html.updatething(thingsList, id, formWithErrors)))
+    }, { thing =>
+      mongoServices.updateThing(id, thing).map(_ => {
+        Await.result(makeThings, Duration.Inf)
+        Ok(views.html.things(Thing.createThingForm, thingsList))
+
+      })
     })
   }
 
-
+  def showUpdateForm(id: String) = Action { implicit request: Request[AnyContent] =>
+    Await.result(makeThings, Duration.Inf)
+    Ok(views.html.updatething(thingsList, id, Thing.createThingForm))
+  }
 
   def showThingForm = Action { implicit request: Request[AnyContent] =>
     Await.result(makeThings, Duration.Inf)
     Ok(views.html.things(Thing.createThingForm, thingsList))
+  }
+
+  def thingWithNoEmptyTags(thing: Thing) = {
+    thing.tags = thing.tags.filter(el => el.nonEmpty)
+    thing
   }
 
   def submitForm: Action[AnyContent] = Action.async { implicit request: Request[AnyContent] =>
@@ -74,7 +88,7 @@ class ThingController @Inject()(
       println(formWithErrors)
       Future.successful(BadRequest(views.html.things(formWithErrors, thingsList)))
     }, { thing =>
-      collection.flatMap(_.insert.one(thing)).map(_ => {
+      collection.flatMap(_.insert.one(thingWithNoEmptyTags(thing))).map(_ => {
         Await.result(makeThings, Duration.Inf)
         Ok(views.html.things(Thing.createThingForm, thingsList))
       }
@@ -104,7 +118,6 @@ class ThingController @Inject()(
   def getThingsWithFilter(filtered: String, value: String): Action[AnyContent] = {
     getThings(Some((filtered, Json.toJsFieldJsValueWrapper(value))))
   }
-
 
 
 }

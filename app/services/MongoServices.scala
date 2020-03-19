@@ -48,13 +48,13 @@ class MongoServices @Inject()(
       ))
   }
 
-  def updateThing(id: String) = {
+  def updateThing(id: String, thing: Thing) = {
     collection.flatMap(_.update(false).one(
       Json.obj(
         {
           "_id" -> BSONObjectID.parse(id).get
         }
-      ), Thing("a",3.50,List())
+      ), thing
     ))
   }
 }

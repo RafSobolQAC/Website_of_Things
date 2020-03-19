@@ -9,8 +9,9 @@ POST        /creatething                     controllers.ThingController.submitF
 GET         /deletething/:id                 controllers.ThingController.deleteThing(id: String)
 GET         /read                            controllers.ThingController.getThings()
 POST        /updatething/:id                 controllers.ThingController.updateThing(id: String)
+GET         /updatething/:id                 controllers.ThingController.showUpdateForm(id: String)
 GET         /read/:filterValue/:value        controllers.ThingController.getThingsWithFilter(filterValue: String, value: String)
-
+GET /search controllers.ThingController.showSearchForm
 #GET         /justthings/:id                  controllers.ThingController.getThings()
 #GET         /findByName/:lastName        controllers.ApplicationUsingJsonReadersWriters.findByName(lastName: String)
 

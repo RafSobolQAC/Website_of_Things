@@ -1,0 +1,10 @@
+@import models.Thing
+@(form: Form[Thing],
+        things: List[ThingWithID],
+        filterOptions: List[(String, String)] = List("name" -> "name", "price" -> "price", "tag" -> "tag"))(implicit messagesProvider: MessagesProvider)
+
+@main("Search")(things) {
+    @helper.select(
+        form("name"), filterOptions
+    )
+}

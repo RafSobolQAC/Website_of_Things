@@ -1,25 +1,34 @@
-2020-03-18 18:54:03,043 [WARN] from reactivemongo.api.MongoConnection in scala-execution-context-global-69 - Connection option 'authSource' deprecated: use option 'authenticationDatabase'
-2020-03-18 18:54:04,038 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-5 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-03-19 09:15:24,355 [WARN] from reactivemongo.api.MongoConnection in scala-execution-context-global-75 - Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-03-19 09:15:25,716 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-7 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-03-18 18:54:04,042 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-5 - Application started (Dev) (no global state)
-2020-03-18 18:54:24,481 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.internal-dispatcher-5 - ReactiveMongoApi stopping...
-2020-03-18 18:54:24,519 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.default-dispatcher-11 - ReactiveMongoApi connections are stopped
-2020-03-18 18:54:24,739 [WARN] from reactivemongo.api.MongoConnection in scala-execution-context-global-71 - Connection option 'authSource' deprecated: use option 'authenticationDatabase'
-2020-03-18 18:54:24,916 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-5 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-03-19 09:15:25,720 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-7 - Application started (Dev) (no global state)
+2020-03-19 09:22:49,655 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.internal-dispatcher-3 - ReactiveMongoApi stopping...
+2020-03-19 09:22:49,727 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.default-dispatcher-6 - ReactiveMongoApi connections are stopped
+2020-03-19 09:22:49,938 [WARN] from reactivemongo.api.MongoConnection in scala-execution-context-global-78 - Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-03-19 09:22:50,119 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-23 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-03-18 18:54:24,918 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-5 - Application started (Dev) (no global state)
-2020-03-18 18:54:32,521 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.internal-dispatcher-4 - ReactiveMongoApi stopping...
-2020-03-18 18:54:32,529 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.default-dispatcher-11 - ReactiveMongoApi connections are stopped
-2020-03-18 18:54:32,624 [WARN] from reactivemongo.api.MongoConnection in scala-execution-context-global-69 - Connection option 'authSource' deprecated: use option 'authenticationDatabase'
-2020-03-18 18:54:32,843 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-13 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-03-19 09:22:50,120 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-23 - Application started (Dev) (no global state)
+2020-03-19 09:25:39,820 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.internal-dispatcher-3 - ReactiveMongoApi stopping...
+2020-03-19 09:25:39,859 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.default-dispatcher-10 - ReactiveMongoApi connections are stopped
+2020-03-19 09:25:40,190 [WARN] from reactivemongo.api.MongoConnection in scala-execution-context-global-166 - Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-03-19 09:25:40,550 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-25 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-03-18 18:54:32,844 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-13 - Application started (Dev) (no global state)
+2020-03-19 09:25:40,555 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-25 - Application started (Dev) (no global state)
+2020-03-19 09:30:47,556 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.internal-dispatcher-3 - ReactiveMongoApi stopping...
+2020-03-19 09:30:47,585 [INFO] from play.modules.reactivemongo.DefaultReactiveMongoApi in application-akka.actor.default-dispatcher-11 - ReactiveMongoApi connections are stopped
+2020-03-19 09:30:47,714 [WARN] from reactivemongo.api.MongoConnection in scala-execution-context-global-256 - Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-03-19 09:30:47,869 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-27 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2020-03-19 09:30:47,870 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-27 - Application started (Dev) (no global state)
