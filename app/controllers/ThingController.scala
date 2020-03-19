@@ -11,9 +11,13 @@ import reactivemongo.api.Cursor
 import reactivemongo.bson.BSONObjectID
 import reactivemongo.play.json.collection.{JSONCollection, _}
 import services.MongoServices
+import utils.TestDataCreator
 
+import scala.collection.mutable.ListBuffer
 import scala.concurrent.duration.Duration
 import scala.concurrent.{Await, ExecutionContext, Future}
+import scala.io.Source
+import scala.util.Random
 
 
 class ThingController @Inject()(
@@ -88,6 +92,27 @@ class ThingController @Inject()(
     thing
   }
 
+  def addToDb() = Future {
+
+    (1 to 50).toList.foreach(el => {
+      val listTags: ListBuffer[String] = new ListBuffer[String]
+      (1 to Random.nextInt(4)).toList.foreach(_ => {
+        listTags += TestDataCreator.tags(Random.nextInt(TestDataCreator.tags.length))
+      }
+      )
+
+      collection.flatMap(_.insert.one(
+        Thing(TestDataCreator.names(Random.nextInt(TestDataCreator.names.length)), TestDataCreator.prices(Random.nextInt(TestDataCreator.prices.length)), listTags.toList)
+      )
+      )
+    })
+  }
+
+  def makeAddToDb: Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
+    Await.result(addToDb(), Duration.Inf)
+    Ok("Added items!")
+  }
+
   def submitForm: Action[AnyContent] = Action.async { implicit request: Request[AnyContent] =>
     Thing.createThingForm.bindFromRequest.fold({ formWithErrors =>
       println(formWithErrors)
@@ -133,10 +158,12 @@ class ThingController @Inject()(
       Json.obj()
     }
   }
+
   def filterGetterGetter(filtered: String, value: String) = {
     if (filtered == "price") filterGetter(filtered, BigDecimal(value))
     else filterGetter(filtered, value)
   }
+
   def filterGetter(filtered: String, value: Any) = {
     value match {
       case decimal: BigDecimal => getBigDecWithFilter(filtered, decimal)
@@ -148,6 +175,7 @@ class ThingController @Inject()(
   def getBigDecWithFilter(filtered: String, value: BigDecimal) = {
     Some((filtered, Json.toJsFieldJsValueWrapper(value)))
   }
+
   def getThingsWithFilter(filtered: String, value: String) = {
     Some((filtered, Json.toJsFieldJsValueWrapper(value)))
   }

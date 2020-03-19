@@ -1,18 +1,20 @@
-#GET         /                                controllers.HomeController.index
+GET         /                       controllers.HomeController.index
 
 #GET         /login                       controllers.LoginController.login
 #POST        /login                       controllers.LoginController.loginSubmit
 
 #GET         /createperson                controllers.ApplicationUsingJsonReadersWriters.create
-GET         /creatething                     controllers.ThingController.showThingForm
-POST        /creatething                     controllers.ThingController.submitForm
-GET         /deletething/:id                 controllers.ThingController.deleteThing(id: String)
-GET         /read                            controllers.ThingController.getThings()
-POST        /updatething/:id                 controllers.ThingController.updateThing(id: String)
-GET         /updatething/:id                 controllers.ThingController.showUpdateForm(id: String)
-GET         /search                          controllers.ThingController.showSearchForm
-POST        /search                          controllers.ThingController.submitSearchForm
+GET         /creatething            controllers.ThingController.showThingForm
+POST        /creatething            controllers.ThingController.submitForm
+GET         /deletething/:id        controllers.ThingController.deleteThing(id: String)
+GET         /read                   controllers.ThingController.getThings()
+POST        /updatething/:id        controllers.ThingController.updateThing(id: String)
+GET         /updatething/:id        controllers.ThingController.showUpdateForm(id: String)
+GET         /search                 controllers.ThingController.showSearchForm
+POST        /search                 controllers.ThingController.submitSearchForm
+
+GET         /makerandom             controllers.ThingController.makeAddToDb
 #GET         /justthings/:id                  controllers.ThingController.getThings()
 #GET         /findByName/:lastName        controllers.ApplicationUsingJsonReadersWriters.findByName(lastName: String)
 
-GET         /assets/*file                    controllers.Assets.at(path="/public", file)
+GET         /assets/*file           controllers.Assets.at(path="/public", file)
