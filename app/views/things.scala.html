@@ -1,17 +1,26 @@
 @import models.Thing
-@import models.Tag
-@(form: Form[Thing], things: List[Thing])(implicit messagesProvider: MessagesProvider)
+@(form: Form[Thing], things: List[ThingWithID], message: String = "Create thing", route: Call = routes.ThingController.submitForm)(implicit messagesProvider: MessagesProvider)
 
+@getRepeat() = {
+    <div class="form-row justify-content-around">
+    @helper.repeat(form("tags"), min = 3) { tagField =>
+        @getAnother(tagField)
+    }
+    </div>
+}
 
-@main("Create thing")(things) {
-    @helper.form(routes.ThingController.submitForm) {
-        @helper.inputText(form("name"), 'id -> "ThingName", 'class -> "InputField")
-        @helper.inputText(form("price"), 'id -> "ThingPrice", 'class -> "InputField")
-        @helper.repeat(form("tags"), min = 3) { tagField =>
-            @helper.inputText(tagField("name"), 'class -> "InputField")
-        }
-        <button type="submit">Create recipe</button>
+@getAnother(field: Field) = {
+    <div class="col-4">
+    @helper.inputText(field, 'class -> " InputField form-control col-12 ", '_label -> "A Tag", 'id -> field.toString)
+    </div>
+}
+
+@main(message)(things) {
+    @helper.form(route, 'class -> "form-group m-3 border p-1") {
+        @helper.inputText(form("name"), 'id -> "ThingName", 'class -> "InputField form-control w-50", '_label -> "Thing's name")
+        @helper.inputText(form("price"), 'id -> "ThingPrice", 'class -> "InputField form-control w-50", '_label -> "Thing's price")
+        @getRepeat()
+        <button class="btn btn-info" type="submit">@message</button>
 
     }
-
 }

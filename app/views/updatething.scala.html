@@ -1,0 +1,9 @@
+@import scala.collection.mutable.ListBuffer
+@(thingList: List[ThingWithID], idToUpdate: String, form: Form[Thing])(implicit messagesProvider: MessagesProvider)
+
+    @{
+        val thingBeingGot = thingList.filter(el => el._id.stringify == idToUpdate).head
+        val prefilledForm: Form[Thing] = form.fill(Thing(thingBeingGot.name, thingBeingGot.price, thingBeingGot.tags))
+
+        things(prefilledForm, thingList, s"Update thing $idToUpdate", routes.ThingController.updateThing(idToUpdate))
+    }

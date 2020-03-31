@@ -13340,7 +13340,7 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#template-resolver;0.1!template-resolver.jar
 [debug] 	[NOT REQUIRED] org.scala-lang#jline;2.10.7!jline.jar
 [debug] 	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar
-[debug] :: resolution report :: resolve 1557ms :: artifacts dl 46ms
+[debug] :: resolution report :: resolve 1464ms :: artifacts dl 37ms
 [debug] 	report for default#recipies_new-build;0.1-SNAPSHOT compile produced in /home/qa-admin/IdeaProjects/testRecipes/Recipies_New/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-recipies_new-build-compile.xml
 [debug] 	report for default#recipies_new-build;0.1-SNAPSHOT runtime produced in /home/qa-admin/IdeaProjects/testRecipes/Recipies_New/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-recipies_new-build-runtime.xml
 [debug] 	report for default#recipies_new-build;0.1-SNAPSHOT test produced in /home/qa-admin/IdeaProjects/testRecipes/Recipies_New/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-recipies_new-build-test.xml
@@ -13354,7 +13354,7 @@
 [debug] 	report for default#recipies_new-build;0.1-SNAPSHOT docs produced in /home/qa-admin/IdeaProjects/testRecipes/Recipies_New/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-recipies_new-build-docs.xml
 [debug] 	report for default#recipies_new-build;0.1-SNAPSHOT pom produced in /home/qa-admin/IdeaProjects/testRecipes/Recipies_New/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-recipies_new-build-pom.xml
 [debug] 	report for default#recipies_new-build;0.1-SNAPSHOT scala-tool produced in /home/qa-admin/IdeaProjects/testRecipes/Recipies_New/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-recipies_new-build-scala-tool.xml
-[debug] 	resolve done (1557ms resolve - 46ms download)
+[debug] 	resolve done (1464ms resolve - 37ms download)
 [info] Done updating.
 [warn] Found version conflict(s) in library dependencies; some are suspected to be binary incompatible:
 [warn] 

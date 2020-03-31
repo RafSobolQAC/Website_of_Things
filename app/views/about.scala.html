@@ -1,4 +1,20 @@
-@()
-@main("About me")() {
+@()(implicit messagesProvider: MessagesProvider)
+    @main("About me")(showFooter = false) {
 
-}
+        <div class="col-12 p-3 font-weight-bold" style="background-color: #eee">
+            <div class="row m-2 p-2 border" style="background-color: #ddd;
+                font-size: 2rem;">
+                <h1>Hi! I'm an about-me.</h1>
+            </div>
+            <div class="row m-2 p-2 border" style="background-color: #ddd;">
+                <p>
+                    This page was made to be a page!
+                    It has full CRUDS functionality to operate on things.</p>
+                <p>
+                    A thing has a name, a price, and a list of up to 3 tags.
+                    You can create one, read all or search for them by name/price/tag, update an existing one
+                    and get rid of things you don't want anymore!
+                </p>
+            </div>
+        </div>
+    }

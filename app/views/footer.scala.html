@@ -1,11 +1,38 @@
-@import scala.collection.mutable.ListBuffer
-@(thingList: List[Thing])
+@(thingList: List[ThingWithID])(implicit messagesProvider: MessagesProvider)
 
-<div>
-    <ul>
-        @println(thingList)
+
+@maybeTags(tags: List[String]) = {
+@if(tags.nonEmpty) {
+
+    @{
+        val sb = new StringBuilder()
+        sb ++= "and the tags are: "
+        tags.indices.foreach(index => {
+            sb ++= tags(index)
+            if(index != tags.length - 1) sb ++= ", "
+        })
+        sb
+    }
+}
+}
+
+<div class=" m-3 p-2 border rounded col-sm-6" >
+    <ul class="list-group">
+
         @for(i <- thingList.indices) {
-            <li>@thingList(i).toString</li>
+            <li class="list-group-item" style="background-color: #eee">
+
+                <p class="m-0 p-0">@thingList(i).name costs @thingList(i).price @maybeTags(thingList(i).tags)</p>
+
+                <form class="m-1" action="@routes.ThingController.deleteThing(thingList(i)._id.stringify)" method="get">
+                    <button class="btn btn-danger" type="submit" name="delete" value="delete">Delete</button>
+                    <a class="btn btn-info" href="@routes.ThingController.updateThing(thingList(i)._id.stringify)">Update</a>
+                </form>
+                @* <form class="m-1" action="@routes.ThingController.updateThing(thingList(i)._id.stringify)" method="post">*@
+                @* <button type="submit" name="update" value="update">Update</button>*@
+                @* </form>*@
+            </li>
         }
+
     </ul>
 </div>
